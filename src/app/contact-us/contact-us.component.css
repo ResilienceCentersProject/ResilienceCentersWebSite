@@ -1,0 +1,58 @@
+/* contact us page*/
+
+#infoContact {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.contact-space {
+    width: 150px;
+    height: 10px;
+    background: #34495e;
+    margin: 40px auto;
+}
+
+.contact-form {
+    max-width: 35%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contact-form-info {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+    border: 0;
+    background: black;
+    padding: 20px 40px;
+    outline: none;
+    color: #ddd;
+    transition: 0.5s;
+    font-size: 15px;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    direction: rtl;
+}
+
+.contact-form-info:focus {
+    box-shadow: 0 0 4px 4px #34495e;
+}
+
+#message {
+    resize: none;
+    height: 140px;
+    direction: rtl;
+}
+
+.contact-form-send {
+    float: left;
+    background: #34495e;
+    color: whitesmoke;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    outline: none;
+}

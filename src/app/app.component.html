@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head dir=rtl>
+        <meta charset="utf-8">
+        <title id=WebName>ITCResilience</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
+
+    <body dir="rtl">
+        <div class="page-icon-bar" dir="ltr">
+
+        <div id="page-facebook">
+            <a id="facebookIcon" class="page-icon" href="https://www.facebook.com/IsraelTraumaCoalition"><img src="assets/images/facebook.png" width="15%" height="15%"/></a>
+        </div>
+        <div id="page-coalition">
+            <a id="coalitionIcon" class="page-icon" href="https://www.kolzchut.org.il/he/%d7%a2%d7%9e%d7%95%d7%93_%d7%a8%d7%90%d7%a9%d7%99"><img src="assets/images/coalition.png" width="20%" height="20%"/></a>
+        </div>
+
+        </div>
+
+        <header>
+        
+        <div id="page-Logo">
+            <img id="page-pic" src="assets/images/logo.jpg"/>
+        </div>
+
+        <div id="page-Title">מרכזי חוסן</div>
+
+        <div id="page-LoginButton">
+            <button id="loginButton" class="designButton designButton-swap">התחברות למורשים<span>לחץ להתחברות</span></button>
+        </div>
+
+        
+        </header>
+
+        <nav>
+        <div class="page-navbar">
+            <a id="home-page" class="navTag" href="about.asp" routerLink="/home-page">דף הבית</a>
+            <div class="dropdown">
+                <a id="dropdown-Resilience-Centers" class="dropbtn navTag" href="news.asp" routerLink="/center-by-location">מרכז חוסן לפי אזור גיאוגרפי</a>
+                <div class="dropdown-content" id="drop-click">
+                    <a id="Ashkelon" class="navTag">אשקלון</a>
+                    <a id="Sderot" class="navTag">שדרות</a>
+                    <div id="dropdown-Gaza-Envelope" class="dropdown navTag">
+                        <a id="Gaza-Envelope" class="dropbtn centerDrop1">עוטף עזה</a>
+                        <div class="dropdown-content" id="drop1-click">
+                            <a id="Gaza-Envelope1" class="navTag">עוטף 1</a>
+                            <a id="Gaza-Envelope2" class="navTag">עוטף 2</a>
+                            <a id="Gaza-Envelope3" class="navTag">עוטף 3</a>
+                            <a id="Gaza-Envelope4" class="navTag">4 עוטף</a>
+                        </div>
+                    </div>
+                    <div id="dropdown-West-Bank" class="dropdown navTag">
+                        <a id="West-Bank" class="dropbtn centerDrop2">יהודה ושומרון</a>
+                        <div class="dropdown-content" id="drop2-click">
+                            <a id="West-Bank1" class="navTag">יהודה 1</a>
+                            <a id="West-Bank2" class="navTag">יהודה 2</a>
+                            <a id="West-Bank3" class="navTag">יהודה 3</a>
+                            <a id="West-Bank4" class="navTag">4 יהודה</a>
+                        </div>
+                    </div>
+                    <a id="Bedouin-society" class="navTag">החברה הבדואית</a>
+                </div>
+            </div>
+                <a id="general-public" class="navTag" href="contact.asp" routerLink="/public-info">מידע לקהל הרחב</a>
+                <a id="volunteers-and-workers" class="navTag" href="about.asp" routerLink="/team-info">מידע לצוותים מקצועיים ומתנדבים ברשויות</a>
+                <a id="contact-us" class="navTag" href="default.asp" routerLink="/contact-us">צור קשר</a>
+            </div>
+        </nav>
+
+
+        <main class="content" role="main">   
+            <router-outlet></router-outlet>
+        </main>
+
+        <footer dir=ltr>
+            <hr/>
+            <div id="creators">Ⓒ Naomi Resnik - Mayan Shaked - Shmuel Eliasian - Matanya Jellinek - Gal Elfersy</div>
+        </footer>
+
+    </body>
+
+</html>
