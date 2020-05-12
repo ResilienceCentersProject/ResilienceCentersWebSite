@@ -1,1 +1,223 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(213, 216, 216);
+  }
+  
+  /* logo & title design */
+  
+  header {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+  
+  #page-LoginButton {
+    margin-left: 1%;
+    max-width: 100%;
+  }
+  
+  #page-Title {
+    font-family: 'Merriweather', serif;
+    color: #555;
+    text-decoration: none;
+    font-size: 900%;
+    letter-spacing: -3px;
+    text-size-adjust: 50%;
+  }
+  
+  #page-Logo {
+    margin-right: 1%;
+  }
+  
+  #page-pic {
+    vertical-align: middle;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  /*----------------------------------------------------------------------*/
+  
+  /*login buttom design*/
+  
+  .designButton {
+    padding: 15px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid white;
+    outline: none;
+    color: black;
+    background-color: transparent;
+    font-family: 'Merriweather', serif;
+    border-radius: 50%;
+  }
+  
+  .designButton-swap span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px 15px;
+    font-size: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    color: black;
+    transition: 0.2s ease;
+  }
+  
+  .designButton-swap::before {
+    content: "";
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: 0.2s ease-in;
+    border-radius: 50%;
+  }
+  
+  .designButton-swap:hover:before {
+    width: 100%;
+  }
+  
+  .designButton-swap:hover span {
+    opacity: 1;
+  }
+  
+  /*----------------------------------------------------------------------*/
+  
+  /* navigetion bar design */
+  
+  nav {
+    margin-top: 1%;
+  }
+  
+  :root {
+    --tag-width: calc(20% - 8px);
+  }
+  
+  .page-navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding-top: 0.2%;
+    padding-bottom: 0.2%;
+    border-radius: 15px;
+  }
+  
+  .navTag {
+    width: 19.7%;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    font-family: arial;
+    padding: 14px 0px;
+    background-color: rgb(137, 138, 139);
+    border-radius: 1rem;
+    margin: 2.5px 0px;
+    cursor: pointer;
+    position: realtive;
+  }
+  
+  .navTag:hover {
+    background-color: rgb(64, 90, 163);
+  }
+  
+  .dropdown {
+    width: 19.7%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown>.dropbtn {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+  }
+  
+  .dropdown-content>.navTag {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 100%;
+  }
+  
+  .dropdown-content #navTag {
+    float: none;
+    display: block;
+  }
+  
+  .show {
+    display: flex;
+  }
+  
+  .dropdown>.dropdown {
+    width: 100% !important;
+  }
+  
+  .dropdown-content .dropdown .dropdown-content {
+    right: 100%;
+    top: 0;
+  }
+  
+  .dropdown:hover>.dropdown-content {
+    display: flex
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  /*----------------------------------------------------------------------*/
+  
+  /* icon design */
+  
+  .page-icon-bar {
+    position: fixed;
+    bottom: 6%;
+    left: 1%;
+    scroll-behavior: smooth;
+  }
+  
+  .page-icon:hover {
+    opacity: 0.3;
+  }
+  
+  /*----------------------------------------------------------------------*/
+  
+  main {
+    max-width: 85%;
+    margin: auto;
+    margin-top: 1%;
+    border: 1px solid black;
+  }
+  
+  /*----------------------------------------------------------------------*/
+  
+  #creators {
+    text-align: center;
+  }
+  
+  /* Responsive Styles */
+  
+  /*@media screen and (max-width: 767px) {
+  
+  }
+  
+  @media screen and (max-width: 575px) {
+  
+  }*/
+  

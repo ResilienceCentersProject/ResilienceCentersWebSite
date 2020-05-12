@@ -1,0 +1,17 @@
+<p>authorized-zone works!</p>
+<!--p dir="ltr">Login will contain both html for login (maybe this is better...) <br/>
+    OR folders can be in a diffrent componant<br/>
+    List of folders will be hidden from user until he is loged in.<br/>
+    Once the user is loged in- the rout will change from http://localhost:4200/login<br/> 
+    to http://localhost:4200/folders (I guess it can also just stay on login)<br/>
+    OR http://localhost:4200/login/folders (probably should use child routing)<br/>
+    When a user clicks a folder the route will change to folders/name-of-folder.<br/> 
+    Can be implemented the same way center by location is implemented.<br/>
+    WHICH   EVER   WAY   IS   CHOSEN,   A   USER   MUST   BE   ABLE   TO   LOG   IN   AND   STAY   LOGED <br/>
+    IN   AS   LONG   AS   HE   IS   IN   THE   WEBSITE<br/>
+    <b>A user must have a way to log out</b>
+</p-->
+
+<!--button (click)="showFolders()">Login/Folders</button>
+<router-outlet></router-outlet-->
+<app-folders [parentData]="componentId"></app-folders>

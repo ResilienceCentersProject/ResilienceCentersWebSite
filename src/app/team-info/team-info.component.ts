@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamInfoComponent implements OnInit {
 
+  public componentId="team-info";//message recieved in @input folders componant
   constructor() { }
 
   ngOnInit(): void {

@@ -1,1 +1,38 @@
-<p>center-by-location works!</p>
+<div class="dropdown">
+    <a id="dropdown-Resilience-Centers" class="dropbtn navTag">מרכז חוסן לפי אזור גיאוגרפי</a>
+    <div class="dropdown-content" id="drop-click">
+
+        <div (click)="onSelect(center)" class="navTag" *ngFor="let center of centers">
+            <a [id]="center.id">{{center.hebName}}</a> 
+            <!--div>
+                <div (click)="onSelect(inner)" class="navTag" *ngFor="let inner of center.inner">
+                    <a [id]="inner.id">{{inner.hebName}}</a>
+                </div>
+            </div--> 
+        </div>
+
+
+
+        <!--a id="Ashkelon" class="navTag">אשקלון</a>
+        <a id="Sderot" class="navTag">שדרות</a>
+        <div id="dropdown-Gaza-Envelope" class="dropdown navTag">
+        <a id="Gaza-Envelope" class="dropbtn centerDrop1">עוטף עזה</a>
+        <div class="dropdown-content" id="drop1-click">
+            <a id="Gaza-Envelope1" class="navTag">עוטף 1</a>
+            <a id="Gaza-Envelope2" class="navTag">עוטף 2</a>
+            <a id="Gaza-Envelope3" class="navTag">עוטף 3</a>
+            <a id="Gaza-Envelope4" class="navTag" >עוטף 4</a>
+        </div>
+        </div>
+        <div id="dropdown-West-Bank" class="dropdown navTag">
+        <a id="West-Bank" class="dropbtn centerDrop2">יהודה ושומרון</a>
+        <div class="dropdown-content" id="drop2-click">
+            <a id="West-Bank1" class="navTag">יהודה 1</a>
+            <a id="West-Bank2" class="navTag">יהודה 2</a>
+            <a id="West-Bank3" class="navTag">יהודה 3</a>
+            <a id="West-Bank4" class="navTag">יהודה 4</a>
+        </div>
+        </div>
+        <a id="Bedouin-society" class="navTag" >החברה הבדואית</a-->
+    </div>
+</div>
