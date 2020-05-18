@@ -31,9 +31,8 @@
     transition: 0.5s;
     font-size: 15px;
     text-align: right;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial;
     border-radius: 20px;
-    direction: rtl;
 }
 
 .contact-form-info:focus {
@@ -43,7 +42,6 @@
 #message {
     resize: none;
     height: 140px;
-    direction: rtl;
 }
 
 .contact-form-send {
@@ -55,4 +53,24 @@
     cursor: pointer;
     transition: 0.5s;
     outline: none;
+}
+
+/*-------select---------*/
+select{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+    border: 0;
+    background: #34495e;
+    padding: 20px 40px;
+    outline: none;
+    color: #ddd;
+    transition: 0.5s;
+    font-size: 15px;
+    text-align: right;
+    font-family: Arial;
+    border-radius: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;   
 }

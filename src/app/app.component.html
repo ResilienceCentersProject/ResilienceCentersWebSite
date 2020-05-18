@@ -12,11 +12,11 @@
   <div class="page-icon-bar" dir="ltr">
 
     <div id="page-facebook">
-      <a id="facebookIcon" class="page-icon" href="https://www.facebook.com/IsraelTraumaCoalition"><img
+      <a id="facebookIcon" class="page-icon" href="https://www.facebook.com/IsraelTraumaCoalition" target="_blank"><img
           src="assets/images/facebook.png" width="15%" height="15%" /></a>
     </div>
     <div id="page-coalition">
-      <a id="coalitionIcon" class="page-icon" href="http://israeltraumacoalition.org/he/"><img
+      <a id="coalitionIcon" class="page-icon" href="http://israeltraumacoalition.org/he/" target="_blank"><img
           src="assets/images/coalition.png" width="20%" height="20%" /></a>
     </div>
 
@@ -25,29 +25,41 @@
   <header>
 
     <div id="page-Logo">
-      <img id="page-pic" src="assets/images/logo.jpg" />
+      <img id="page-pic" src="assets/images/ITC-logo.png"/>
     </div>
 
-    <div id="page-Title">מרכזי חוסן</div>
+    <div id="page-Title">אתר הדרכה מרכזי חוסן</div>
 
-    <!--div id="page-LoginButton">
-      <button id="loginButton" class="designButton designButton-swap" routerLink="/login">התחברות למורשים<span>לחץ להתחברות</span></button>
-    </div-->
-    <input type="password" placeholder="enter password">
-    <button routerLink="authorized-zone">Folders if code entered V</button>
-    <button routerLink="authorized-zone">login-logout vice versa</button>
-    <!--button id="loginButton" class="designButton designButton-swap">התחברות למורשים<span>לחץ להתחברות</span></button-->
 
+    <div *ngIf="!get_loggedIn(); then thenBlock; else elseBlock"></div>
+
+    <ng-template #thenBlock>
+      <input #userInput type="password" placeholder="הכנס סיסמא">
+      <button (click)="check_code(userInput.value)" >{{get_logMessage()}}</button>
+    </ng-template>
+
+    <ng-template #elseBlock>
+      <button (click)="check_loggedIn()">תיקיות</button>
+      <button (click)="logout()" >{{get_logMessage()}}</button>
+    </ng-template>
+
+  
 
   </header>
 
   <nav>
     <div class="page-navbar">
       <a id="home-page" class="navTag" routerLink="/home-page">דף הבית</a>
-      <app-center-by-location class="dropdown"></app-center-by-location>
+      <div class="dropdown">
+        <a id="dropdown-Resilience-Centers" class="dropbtn navTag">מרכז חוסן לפי אזור גיאוגרפי</a>
+        <div class="dropdown-content" id="drop-click">
+            <div (click)="onSelect(center)" class="navTag" *ngFor="let center of centers">
+                <a [id]="center.id">{{center.hebName}}</a> 
+            </div>
+        </div>
+      </div>
       <a id="general-public" class="navTag" routerLink="/public-info">מידע לקהל הרחב</a>
-      <a id="volunteers-and-workers" class="navTag" routerLink="/team-info">מידע לצוותים מקצועיים
-        ומתנדבים ברשויות</a>
+      <a id="volunteers-and-workers" class="navTag" routerLink="/team-info">מידע למתנדבים ברשות</a>
       <a id="contact-us" class="navTag" routerLink="/contact-us">צור קשר</a>
     </div>
   </nav>

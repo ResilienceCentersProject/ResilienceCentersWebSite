@@ -9,16 +9,16 @@ import { CenterInfoComponent } from './center-info/center-info.component';
 import { FoldersComponent } from './folders/folders.component';
 import { FilesComponent } from './files/files.component';
 import { AuthorizedZoneComponent } from './authorized-zone/authorized-zone.component';
+import { LocationComponent } from './location/location.component';
+import { AuthGuardService } from './auth-guard.service';
 
 
 const routes: Routes = [ 
   {path:'', redirectTo: '/home-page', pathMatch: 'full'},
-  {path: 'authorized-zone', component: AuthorizedZoneComponent},
+  {path: 'authorized-zone', component: AuthorizedZoneComponent, canActivate: [AuthGuardService]},
+  {path:'location/:id',component: LocationComponent},
   {path:'center-by-location/:id',component: CenterInfoComponent},
   {path: 'folders/:id', component:FilesComponent},
-  //{path: 'public-info/folders/:id', component:FilesComponent},//??
-  //{path: 'team-info/folders/:id', component:FilesComponent},//??
-  //{path: 'authorized-zone/folders/:id', component:FilesComponent},//??
   {path:'contact-us', component: ContactUsComponent},
   {path:'home-page', component: HomePageComponent},
   {path:'public-info', component: PublicInfoComponent},
@@ -36,6 +36,7 @@ export const routingComponents = [ ContactUsComponent,
                                    PublicInfoComponent,
                                    TeamInfoComponent,
                                    PageNotFoundComponent,
+                                   LocationComponent,
                                    CenterInfoComponent,
                                    AuthorizedZoneComponent,
                                    FoldersComponent

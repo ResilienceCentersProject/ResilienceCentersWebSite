@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router'; 
+
 
 @Component({
   selector: 'app-center-info',
@@ -9,7 +10,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class CenterInfoComponent implements OnInit {
 
   public centerId="";
+  //public imageSrcArray=[];
   constructor(private route: ActivatedRoute) { }
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params:ParamMap)=>{
