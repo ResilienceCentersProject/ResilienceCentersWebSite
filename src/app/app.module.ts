@@ -6,6 +6,7 @@ import { FilesComponent } from './files/files.component';
 import { FoldersComponent } from './folders/folders.component';
 import { LocationComponent } from './location/location.component';
 import { AuthGuardService } from './auth-guard.service';
+import { SlideshowComponent } from './slideshow/slideshow.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AuthGuardService } from './auth-guard.service';
     routingComponents,
     FilesComponent,
     FoldersComponent,
-    LocationComponent
+    LocationComponent,
+    SlideshowComponent
   ],
   imports: [
     BrowserModule,
