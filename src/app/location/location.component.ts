@@ -43,8 +43,7 @@ export class LocationComponent implements OnInit {
   onSelect(center){
     this.router.navigate(['/center-by-location',center.id]);
   }
-  
-
 
 }
+//might be in use later. dont erase.
 

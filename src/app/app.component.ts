@@ -15,11 +15,22 @@ export class AppComponent {
   public centers=[
     {"id":"ashkelon","hebName":"אשקלון"},
     {"id":"sderot", "hebName":"שדרות"},
-    {"id":"gaza-envelope","hebName":"עוטף עזה"},
-    {"id":"west-bank", "hebName":"יהודה ושומרון"},
+    {"id":"gaza-envelope-1","hebName":"1-עוטף עזה"},
+    {"id":"gaza-envelope-2","hebName":"2-עוטף עזה"},
+    {"id":"gaza-envelope-3","hebName":"3-עוטף עזה"},
+    {"id":"gaza-envelope-4","hebName":"4-עוטף עזה"},
+    {"id":"samaria","hebName":"שומרון"},
+    {"id":"binyamin","hebName":"בנימין"},
+    {"id":"yehuda","hebName":"יהודה"},
+    {"id":"etzion","hebName":"עציון"},
     {"id":"bedouin-society","hebName":"החברה הבדואית"},
   ];
-
+  public subjects=[
+    {"id":"subject-1","hebName":"נושא-1"},
+    {"id":"subject-2","hebName":"נושא-2"},
+    {"id":"subject-3","hebName":"נושא-3"},
+  ];
+  
   constructor(private router: Router, private route:ActivatedRoute, private authGuardService: AuthGuardService) { }
 
 
@@ -31,7 +42,10 @@ export class AppComponent {
       this.router.navigate(['/center-by-location',center.id]);
     }
   }
+  onSelectSubject(subject){
+    this.router.navigate(['/public-info',subject.id]);
 
+  }
   public get_loggedIn(){
     return this.authGuardService.isLoggedIn;
   }

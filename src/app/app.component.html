@@ -58,8 +58,18 @@
             </div>
         </div>
       </div>
-      <a id="general-public" class="navTag" routerLink="/public-info">מידע לקהל הרחב</a>
-      <a id="volunteers-and-workers" class="navTag" routerLink="/team-info">מידע למתנדבים ברשות</a>
+
+      <div class="dropdown">
+        <a id="general-public" class="dropbtn navTag">מידע לקהל הרחב</a>
+        <div class="dropdown-content" id="drop-click">
+            <div (click)="onSelectSubject(subject)" class="navTag" *ngFor="let subject of subjects">
+                <a [id]="subject.id">{{subject.hebName}}</a> 
+            </div>
+        </div>
+      </div>
+
+      <!-- <a id="general-public" class="navTag" routerLink="/public-info">מידע לקהל הרחב</a> -->
+      <!-- <a id="volunteers-and-workers" class="navTag" routerLink="/team-info">מידע למתנדבים ברשות</a> -->
       <a id="contact-us" class="navTag" routerLink="/contact-us">צור קשר</a>
     </div>
   </nav>
