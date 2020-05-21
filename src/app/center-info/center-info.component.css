@@ -1,0 +1,36 @@
+#center-info{
+    font: Ariel
+}
+p, ul, table, a, h2{
+    font-size: medium;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#info{
+    background: thistle;
+}
+
+tr{
+    text-align: right;
+}
+
+td{
+    height: 30px;
+    width: 200px;
+}
+li{
+    height: 40px;
+}
+
+#links{
+    background: lightseagreen;
+}
+
+#workshops{
+    background: lightcyan;  
+}
+
+#phone-numbers{
+    background: lightgoldenrodyellow;
+}

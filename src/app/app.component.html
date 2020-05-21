@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head dir=rtl>
+  <meta charset="utf-8">
+  <title id=WebName>ITCResilience</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body dir="rtl">
+
+  <div class="page-icon-bar" dir="ltr">
+
+    <div id="page-facebook">
+      <a id="facebookIcon" class="page-icon" href="https://www.facebook.com/IsraelTraumaCoalition" target="_blank"><img
+          src="assets/images/facebook.png" width="15%" height="15%" /></a>
+    </div>
+    <div id="page-coalition">
+      <a id="coalitionIcon" class="page-icon" href="http://israeltraumacoalition.org/he/" target="_blank"><img
+          src="assets/images/coalition.png" width="20%" height="20%" /></a>
+    </div>
+
+  </div>
+
+  <header>
+
+    <div id="page-Logo">
+      <img id="page-pic" src="assets/images/ITC-logo.png"/>
+    </div>
+
+    <div id="page-Title">אתר הדרכה מרכזי חוסן</div>
+
+
+    <div *ngIf="!get_loggedIn(); then thenBlock; else elseBlock"></div>
+
+    <ng-template #thenBlock>
+      <input #userInput type="password" placeholder="הכנס סיסמא">
+      <button (click)="check_code(userInput.value)" >{{get_logMessage()}}</button>
+    </ng-template>
+
+    <ng-template #elseBlock>
+      <button (click)="check_loggedIn()">תיקיות</button>
+      <button (click)="logout()" >{{get_logMessage()}}</button>
+    </ng-template>
+
+  
+
+  </header>
+
+  <nav>
+    <div class="page-navbar">
+      <a id="home-page" class="navTag" routerLink="/home-page">דף הבית</a>
+      <div class="dropdown">
+        <a id="dropdown-Resilience-Centers" class="dropbtn navTag">מרכז חוסן לפי אזור גיאוגרפי</a>
+        <div class="dropdown-content" id="drop-click">
+            <div (click)="onSelect(center)" class="navTag" *ngFor="let center of centers">
+                <a [id]="center.id">{{center.hebName}}</a> 
+            </div>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a id="general-public" class="dropbtn navTag">מידע לקהל הרחב</a>
+        <div class="dropdown-content" id="drop-click">
+            <div (click)="onSelectSubject(subject)" class="navTag" *ngFor="let subject of subjects">
+                <a [id]="subject.id">{{subject.hebName}}</a> 
+            </div>
+        </div>
+      </div>
+
+      <!-- <a id="general-public" class="navTag" routerLink="/public-info">מידע לקהל הרחב</a> -->
+      <!-- <a id="volunteers-and-workers" class="navTag" routerLink="/team-info">מידע למתנדבים ברשות</a> -->
+      <a id="contact-us" class="navTag" routerLink="/contact-us">צור קשר</a>
+    </div>
+  </nav>
+
+
+  <main class="content" role="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer dir=ltr>
+    <hr />
+    <div id="creators">Ⓒ Naomi Resnik - Mayan Shaked - Shmuel Eliasian - Matanya Jellinek - Gal Elfersy</div>
+  </footer>
+
+</body>
+
+</html>
