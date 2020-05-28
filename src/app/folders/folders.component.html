@@ -1,5 +1,4 @@
- <h3>message from parent component: {{parentData}}<h3>
- <div (click)="onSelect(folder)" *ngFor="let folder of folders">
-    <button [id]="folder.id">{{folder.name}}</button>  
+ <div (click)="onSelect(center)" *ngFor="let center of centers">
+    <button [id]="center.id">{{center.hebName}}</button>  
  </div>
 

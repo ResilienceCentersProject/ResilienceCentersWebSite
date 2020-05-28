@@ -14,15 +14,8 @@ export class AppComponent {
 
   public centers=[
     {"id":"ashkelon","hebName":"אשקלון"},
-    {"id":"sderot", "hebName":"שדרות"},
-    {"id":"gaza-envelope-1","hebName":"1-עוטף עזה"},
-    {"id":"gaza-envelope-2","hebName":"2-עוטף עזה"},
-    {"id":"gaza-envelope-3","hebName":"3-עוטף עזה"},
-    {"id":"gaza-envelope-4","hebName":"4-עוטף עזה"},
-    {"id":"samaria","hebName":"שומרון"},
-    {"id":"binyamin","hebName":"בנימין"},
-    {"id":"yehuda","hebName":"יהודה"},
-    {"id":"etzion","hebName":"עציון"},
+    {"id":"judea-and-samaria", "hebName":"יהודה ושומרון"},
+    {"id":"gaza-strip","hebName":"עוטף עזה"},
     {"id":"bedouin-society","hebName":"החברה הבדואית"},
   ];
   public subjects=[
@@ -35,11 +28,10 @@ export class AppComponent {
 
 
   onSelect(center){
-    if(center.id == "gaza-envelope" || center.id == "west-bank"){
-      this.router.navigate(['/location',center.id]);
-    }
-    else{
-      this.router.navigate(['/center-by-location',center.id]);
+    if(center.id == "judea-and-samaria" || center.id == "gaza-strip"){
+      this.router.navigate(['/folders',center.id]);
+    } else {
+      this.router.navigate(['/center-info',center.id]);
     }
   }
   onSelectSubject(subject){

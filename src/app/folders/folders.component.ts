@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-folders',
@@ -8,11 +8,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FoldersComponent implements OnInit {
 
-  public folders=[//these will change according to the tag that wants to use folder componant
-    {"id":"folder1" ,"name":"folder 1"},
-    {"id":"folder2" ,"name":"folder 2"},
-    {"id":"folder3" ,"name":"folder 3"},
-    {"id":"folder4" ,"name":"folder 4"},
+  public centers;//these will change according to the tag that wants to use folder componant
+
+  public gazaStripCenters=[
+    {"id":"ashkelon-beach","hebName":"חוף אשקלון"},
+    {"id":"sderot","hebName":"שדרות"},
+    {"id":"shaar-hanegev","hebName":"שער הנגב"},
+    {"id":"negev-fields","hebName":"שדות נגב"},
+    {"id":"eshkol","hebName":"אשכול"},
+  ];
+
+  public judeaAndSamariaCenters=[
+    {"id":"benjamin","hebName":"בנימין"},
+    {"id":"shomron","hebName":"שומרון"},
+    {"id":"etzion","hebName":"עציון"},
+    {"id":"judea","hebName":"יהודה"},
   ];
 
   @Input() public parentData;/*must be the same as in the parent- this tag is located at team-info, public-info and login*/
@@ -20,10 +30,18 @@ export class FoldersComponent implements OnInit {
   constructor(private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params:ParamMap)=>{
+      let id = params.get('id');
+      if(id == 'judea-and-samaria')
+        this.centers = this.judeaAndSamariaCenters;
+      else
+        this.centers = this.gazaStripCenters;
+    });
+   
   }
 
-  onSelect(folder){
-    this.router.navigate(['/folders',this.parentData+"/"+folder.id]);
+  onSelect(center){
+     this.router.navigate(['/center-info',center.id]);
   }
 
 }
