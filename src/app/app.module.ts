@@ -10,6 +10,13 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
 import { FormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
 
+/*-----FIREBASE------*/
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { LoginComponent } from './login/login.component';
+/*-----FIREBASE------*/
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +24,20 @@ import { NgImageSliderModule } from 'ng-image-slider';
     FilesComponent,
     FoldersComponent,
     LocationComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+
+    /*-----FIREBASE------*/
+    AngularFireModule.initializeApp(environment.firebaseConfig),//note: enviroment.firebase_object_name
+    AngularFireAnalyticsModule,
+    /*-----FIREBASE------*/
+
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

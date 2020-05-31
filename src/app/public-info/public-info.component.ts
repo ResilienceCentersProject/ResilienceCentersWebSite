@@ -10,7 +10,6 @@ export class PublicInfoComponent implements OnInit {
 
   public subjectId="";
   public componentId;
-  //public componentId=`public-info: ${this.subjectId}`;//message recieved in @input folders componant
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {

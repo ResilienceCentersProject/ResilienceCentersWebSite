@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  
+  //we added this from: goto console-> project name-> </> -> click #app-> settings -> scroll to project -> copy Config-> paset here
+  firebaseConfig: {
+    apiKey: "AIzaSyA3M-EwOwvgtIl2JH4geN2lzHwdqUbo134",
+    authDomain: "itcresilience-54e90.firebaseapp.com",
+    databaseURL: "https://itcresilience-54e90.firebaseio.com",
+    projectId: "itcresilience-54e90",
+    storageBucket: "itcresilience-54e90.appspot.com",
+    messagingSenderId: "535981616605",
+    appId: "1:535981616605:web:ff91aa5830168c3f101a34",
+    measurementId: "G-K8HYVGZ1KK"
+  }
 };
 
 /*

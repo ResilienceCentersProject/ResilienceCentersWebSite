@@ -9,8 +9,8 @@ import { AuthGuardService } from './auth-guard.service';
 })
 export class AppComponent {
  
-  private logMessage = "התחבר";
-  private code="123";//If you think you are smart you are not :) THIS CODE IS VISABLE TO ALL !!!!!
+  //private logMessage = "התחבר";
+  //private code="123";//If you think you are smart you are not :) THIS CODE IS VISABLE TO ALL !!!!!
 
   public centers=[
     {"id":"ashkelon","hebName":"אשקלון"},
@@ -24,8 +24,8 @@ export class AppComponent {
     {"id":"subject-3","hebName":"נושא-3"},
   ];
   
-  constructor(private router: Router, private route:ActivatedRoute, private authGuardService: AuthGuardService) { }
-
+  //constructor(private router: Router, private route:ActivatedRoute, private authGuardService: AuthGuardService) { }
+  constructor(private router: Router, private route:ActivatedRoute) { }
 
   onSelect(center){
     if(center.id == "judea-and-samaria" || center.id == "gaza-strip"){
@@ -38,35 +38,35 @@ export class AppComponent {
     this.router.navigate(['/public-info',subject.id]);
 
   }
-  public get_loggedIn(){
-    return this.authGuardService.isLoggedIn;
-  }
-  public get_logMessage(){
-    return this.logMessage;
-  }
-  public check_code(value){
-    if(value == this.code)
-    {
-      this.authGuardService.isLoggedIn=true;
-      this.logMessage="התנתק";
-      //allow routing from folders to authrized zone
-      //check that user cant use router to get to authorized zone without password 
-    }
-    else
-    {
-      alert("הסיסמא שגויה :(");
-    }
-  }
-  public logout()
-  {
-    this.authGuardService.isLoggedIn=false;
-    this.logMessage="התחבר";
-    //if user is in autherised zone  -> go to home_page
-  }
-  public check_loggedIn()
-  {
-    if(this.authGuardService.isLoggedIn)
-      this.router.navigate(['/authorized-zone'])
-  }
+  // public get_loggedIn(){
+  //   return this.authGuardService.isLoggedIn;
+  // }
+  // public get_logMessage(){
+  //   return this.logMessage;
+  // }
+  // public check_code(value){
+  //   if(value == this.code)
+  //   {
+  //     this.authGuardService.isLoggedIn=true;
+  //     this.logMessage="התנתק";
+  //     //allow routing from folders to authrized zone
+  //     //check that user cant use router to get to authorized zone without password 
+  //   }
+  //   else
+  //   {
+  //     alert("הסיסמא שגויה :(");
+  //   }
+  // }
+  // public logout()
+  // {
+  //   this.authGuardService.isLoggedIn=false;
+  //   this.logMessage="התחבר";
+  //   //if user is in autherised zone  -> go to home_page
+  // }
+  // public check_loggedIn()
+  // {
+  //   if(this.authGuardService.isLoggedIn)
+  //     this.router.navigate(['/authorized-zone'])
+  // }
 
 }

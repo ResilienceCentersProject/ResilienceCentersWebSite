@@ -9,7 +9,7 @@ export class AuthGuardService {
 
   // you would usually put this in it's own service and not access it directly!
   // this is just for the sake of the demo.
-  isLoggedIn: boolean = false;
+  private isLoggedIn: boolean = false;
 
   constructor(
     private router: Router

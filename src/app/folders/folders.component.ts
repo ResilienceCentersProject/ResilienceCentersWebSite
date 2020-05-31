@@ -16,7 +16,7 @@ export class FoldersComponent implements OnInit {
     {"id":"folder4" ,"name":"folder 4"},
   ];
 
-  @Input() public parentData;/*must be the same as in the parent- authorized zone*/
+  //@Input() public parentData;/*must be the same as in the parent- authorized zone*/
   
   constructor(private router: Router, private route:ActivatedRoute) { }
 
@@ -24,7 +24,7 @@ export class FoldersComponent implements OnInit {
   }
 
   onSelect(folder){
-    this.router.navigate(['/folders',this.parentData+"/"+folder.id]);
+    this.router.navigate(['/folders',folder.id]);
   }
 
 }
