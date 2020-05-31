@@ -29,7 +29,7 @@ export class AppComponent {
 
   onSelect(center){
     if(center.id == "judea-and-samaria" || center.id == "gaza-strip"){
-      this.router.navigate(['/folders',center.id]);
+      this.router.navigate(['/location',center.id]);
     } else {
       this.router.navigate(['/center-info',center.id]);
     }

@@ -16,7 +16,7 @@ import { AuthGuardService } from './auth-guard.service';
 const routes: Routes = [ 
   {path:'', redirectTo: '/home-page', pathMatch: 'full'},
   {path: 'authorized-zone', component: AuthorizedZoneComponent, canActivate: [AuthGuardService]},
-  // {path:'location/:id',component: LocationComponent},
+  {path:'location/:id',component: LocationComponent},
   {path:'center-info/:id',component: CenterInfoComponent},
   {path:'public-info/:id',component: PublicInfoComponent},
   {path: 'folders/:id', component:FoldersComponent},

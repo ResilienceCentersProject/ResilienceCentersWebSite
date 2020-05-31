@@ -1,4 +1,12 @@
- <div (click)="onSelect(center)" *ngFor="let center of centers">
-    <button [id]="center.id">{{center.hebName}}</button>  
- </div>
+<p dir="ltr">
+   This will be used by login as a router-outlet<br/>
+   -that is how I configured it if you would rather it be a tag that is quite all right<br/>
+   will be used be Team-info as a tag,<br/>
+   will be used by Public-info as a tag.<br/>
+    </p>
+   
+    <h3>message from parent component: {{parentData}}<h3>
+    <div (click)="onSelect(folder)" *ngFor="let folder of folders">
+       <button [id]="folder.id">{{folder.name}}</button>  
+    </div>
 
