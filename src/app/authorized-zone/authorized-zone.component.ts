@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../services/auth.service";
 
 
 
@@ -13,7 +14,9 @@ import { Router } from '@angular/router';
 })
 export class AuthorizedZoneComponent implements OnInit {
 
- 
+  constructor(
+    public authService: AuthService
+  ) { }
 
   // private logMessage = "התחבר";
   // private code="123";//If you think you are smart you are not :) THIS CODE IS VISABLE TO ALL !!!!!

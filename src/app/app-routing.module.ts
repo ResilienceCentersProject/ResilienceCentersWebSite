@@ -10,10 +10,12 @@ import { FilesComponent } from './files/files.component';
 import { AuthorizedZoneComponent } from './authorized-zone/authorized-zone.component';
 import { LocationComponent } from './location/location.component';
 import { LoginComponent } from './login/login.component';
-//import { AuthGuardService } from './auth-guard.service';
+
+
+
 
 /*-----FIREBASE-AUTH------*/
-import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { AuthGuard } from "./guard/auth.guard";
 /*-----FIREBASE-AUTH------*/
 
 
@@ -21,8 +23,7 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 const routes: Routes = [ 
   {path:'', redirectTo: '/home-page', pathMatch: 'full'},
-  //{path: 'authorized-zone', component: AuthorizedZoneComponent, canActivate: [AuthGuardService]},
-  {path: 'authorized-zone', component: AuthorizedZoneComponent, canActivate: [AngularFireAuthGuard]},
+  {path: 'authorized-zone', component: AuthorizedZoneComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path:'location/:id',component: LocationComponent},
   {path:'center-info/:id',component: CenterInfoComponent},

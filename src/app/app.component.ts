@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthGuardService } from './auth-guard.service';
 
 @Component({
   selector: 'app-root',
