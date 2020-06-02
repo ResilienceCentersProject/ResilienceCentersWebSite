@@ -5,8 +5,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PublicInfoComponent } from './public-info/public-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CenterInfoComponent } from './center-info/center-info.component';
-import { FoldersComponent } from './folders/folders.component';
-import { FilesComponent } from './files/files.component';
 import { AuthorizedZoneComponent } from './authorized-zone/authorized-zone.component';
 import { LocationComponent } from './location/location.component';
 import { LoginComponent } from './login/login.component';
@@ -16,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 
 /*-----FIREBASE-AUTH------*/
 import { AuthGuard } from "./guard/auth.guard";
+//import { FoldersComponent } from './folders/folders.component';
+//import { FilesComponent } from './files/files.component';
 /*-----FIREBASE-AUTH------*/
 
 
@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:'location/:id',component: LocationComponent},
   {path:'center-info/:id',component: CenterInfoComponent},
   {path:'public-info/:id',component: PublicInfoComponent},
-  {path: 'folders/:id', component:FoldersComponent},
+  //{path: 'folders/:id', component:FoldersComponent},
   {path:'contact-us', component: ContactUsComponent},
   {path:'home-page', component: HomePageComponent},
   {path: "**", component: PageNotFoundComponent}
@@ -46,6 +46,6 @@ export const routingComponents = [ ContactUsComponent,
                                    LocationComponent,
                                    CenterInfoComponent,
                                    AuthorizedZoneComponent,
-                                   LoginComponent,
-                                   FoldersComponent
+                                   LoginComponent
+                                   //FoldersComponent
                                  ]

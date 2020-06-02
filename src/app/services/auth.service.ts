@@ -1,9 +1,12 @@
-import { Injectable, NgZone } from '@angular/core';
-//import { User } from "../services/user";
-//import { auth } from 'firebase/app';
+/*import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Router } from "@angular/router";
+import { Router } from "@angular/router";*/
+
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 export interface User {
   email: string;
@@ -14,71 +17,42 @@ export interface User {
 })
 
 export class AuthService {
-  userData: any; // Save logged in user data
 
-  constructor(
-    public afs: AngularFirestore,   // Inject Firestore service
-    public afAuth: AngularFireAuth, // Inject Firebase auth service
-    public router: Router,  
-    public ngZone: NgZone // NgZone service to remove outside scope warning
-  ) {    
-    /* Saving user data in localstorage when 
-    logged in and setting up null when logged out */
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
-      } else {
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
-    })
-  }
-
-  // Sign in with email/password
-  SignIn(email, password) {
-    alert(":)");
-    return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['/authorized-zone']);
-        });
-        this.SetUserData(result.user);
-      }).catch((error) => {
-        window.alert(error.message)
-      })
-  }
-
+  //NEED TO SET A LIMIT TO THE NUMBER OF ERRORS AND A TIME OUT
+  //NEED TO SET WHAT HAPPENS IN CASE OF ERROR
+  //NEED TO CHECK IF isAuth IS RIFGTLY PLASED
   
+  user: Observable<firebase.User>;
+  private isAuth=false;
 
-  // Returns true when user is looged in and email is verified
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
+    this.user = firebaseAuth.authState;
+  }
+
+  login(email: string, password: string) {
+    this.firebaseAuth
+      .signInWithEmailAndPassword(email, password)
+      .then(value => {
+        this.isAuth=true;
+        this.router.navigate(['/authorized-zone']); 
+        console.log('login was successful!');
+      })
+      .catch(err => {
+        console.log('Something went wrong:',err.message);
+        alert('שם המשתמש או הסיסמא שגויים,  נסה שנית או פנה אל מזכירת המרכז');
+      });
+    
+  }
+
+  logout() {
+    this.firebaseAuth.signOut();
+    this.isAuth=false;
+    this.router.navigate(['/login']); 
+  }
+
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return this.isAuth;
   }
-
-
-
-  /* Setting up user data when sign in with username/password, 
-  sign up with username/password and sign in with social auth  
-  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.email}`);
-    const userData: User = {
-      email: user.email,
-    }
-    return userRef.set(userData, {
-      merge: true
-    })
-  }
-
-  // Sign out 
-  SignOut() {
-    return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate(['login']);
-    })
-  }
+  
 
 }
