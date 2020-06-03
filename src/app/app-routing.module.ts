@@ -19,8 +19,6 @@ import { AuthGuard } from "./guard/auth.guard";
 /*-----FIREBASE-AUTH------*/
 
 
-
-
 const routes: Routes = [ 
   {path:'', redirectTo: '/home-page', pathMatch: 'full'},
   {path: 'authorized-zone', component: AuthorizedZoneComponent, canActivate: [AuthGuard]},

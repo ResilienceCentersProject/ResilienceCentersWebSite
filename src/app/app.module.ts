@@ -14,11 +14,13 @@ import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+//import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AuthService } from "./services/auth.service";
-import { AuthGuard } from './guard/auth.guard';
 /*-----FIREBASE------*/
+
+/*-----STORAGE-REALTIME-DATABSE-----*/
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+/*-----STORAGE-REALTIME-DATABSE-----*/
 
 @NgModule({
   declarations: [
@@ -38,9 +40,9 @@ import { AuthGuard } from './guard/auth.guard';
 
     /*-----FIREBASE------*/
     AngularFireModule.initializeApp(environment.firebaseConfig),//note: enviroment.firebase_object_name
-    AngularFireAnalyticsModule,
+    //AngularFireAnalyticsModule,
     AngularFireAuthModule,
-    AngularFirestoreModule,
+    AngularFireDatabaseModule, // for database
     /*-----FIREBASE------*/
 
   ],
