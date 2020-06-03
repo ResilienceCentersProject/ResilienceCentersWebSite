@@ -3,21 +3,21 @@
     <h1>צור קשר</h1>
     <div class="contact-space"></div>
     <form class="contact-form" action="" method="post">
-        <input type="text" class="contact-form-info" placeholder="שם מלא">
-        <input type="email" class="contact-form-info" placeholder="אימייל">
-        <input type="tel" class="contact-form-info" placeholder="פלאפון">
-        <select>
+        <input type="text" class="contact-form-info" id="fullName" placeholder="שם מלא">
+        <input type="email" class="contact-form-info" id="email" placeholder="אימייל">
+        <input type="tel" class="contact-form-info" id="phone" placeholder="פלאפון">
+        <select id="contactIssue">
             <option>--בחר נושא פנייה--</option>
             <option>תרומות</option>
             <option>פנייה לטיפול</option>
             <option>תרומות</option>
             <option>אחר</option>
         </select>
-        <select>
+        <select id="contactCenter">
             <option>--בחר מרכז לפנייה--</option>
         </select>
         <textarea id="message" class="contact-form-info" placeholder="הודעה"></textarea>
-        <input type="submit" class="contact-form-send" value="שלח">
+        <input type="submit" class="contact-form-send" value="שלח" (click)="submitData()">
     </form>
 </div>
 

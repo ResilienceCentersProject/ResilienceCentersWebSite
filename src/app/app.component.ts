@@ -27,6 +27,7 @@ export class AppComponent {
   //constructor(private router: Router, private route:ActivatedRoute, private authGuardService: AuthGuardService) { }
   constructor(private router: Router, private route:ActivatedRoute) { }
 
+
   onSelect(center){
     if(center.id == "judea-and-samaria" || center.id == "gaza-strip"){
       this.router.navigate(['/location',center.id]);
@@ -34,10 +35,11 @@ export class AppComponent {
       this.router.navigate(['/center-info',center.id]);
     }
   }
+
   onSelectSubject(subject){
     this.router.navigate(['/public-info',subject.id]);
-
   }
+
   // public get_loggedIn(){
   //   return this.authGuardService.isLoggedIn;
   // }

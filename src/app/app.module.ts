@@ -7,7 +7,7 @@ import { FoldersComponent } from './folders/folders.component';
 import { LocationComponent } from './location/location.component';
 import { AuthGuardService } from './auth-guard.service';
 import { SlideshowComponent } from './slideshow/slideshow.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
 
 /*-----FIREBASE------*/
@@ -31,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgImageSliderModule,
 
     /*-----FIREBASE------*/
