@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import {ActivatedRoute,Router } from '@angular/router';
+import { AuthService } from "../services/auth.service";
+
 
 @Component({
   selector: 'app-authorized-zone',
@@ -8,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorizedZoneComponent implements OnInit {
 
-  public componentId="authorized-zone";//message recieved in @input folders componant
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
 
   }
+
+  //btn logout listener
+  logout() {
+    this.authService.logout();
+  }
+
+
+
 
 
 

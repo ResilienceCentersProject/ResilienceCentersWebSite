@@ -1,29 +1,48 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
+
+export interface Folder{
+  id:string;
+  name:string;
+}
 
 @Component({
   selector: 'app-folders',
   templateUrl: './folders.component.html',
   styleUrls: ['./folders.component.css']
 })
+
+//This Component is to be used only by Authorized-zone!
 export class FoldersComponent implements OnInit {
 
-  public folders=[//these will change according to the tag that wants to use folder componant
-    {"id":"folder1" ,"name":"folder 1"},
-    {"id":"folder2" ,"name":"folder 2"},
-    {"id":"folder3" ,"name":"folder 3"},
-    {"id":"folder4" ,"name":"folder 4"},
-  ];
+  private dbPath='/folders';//path to folders in realtime data base
+  private folderArray: Array<Folder>=[];//Array for folders: each folder has id and name
 
-  @Input() public parentData;/*must be the same as in the parent- this tag is located at team-info, public-info and login*/
-  
-  constructor(private router: Router, private route:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  constructor(private router: Router, private route:ActivatedRoute, private db: AngularFireDatabase) { 
+    
+    this.db.list(this.dbPath).valueChanges()
+    .subscribe(data => {
+
+      //inject data foler content in to folderArray:
+      for( let i=0; i< data.length; i++){
+        this.folderArray.push({id: data[i]["id"], name: data[i]["name"]});
+      }
+
+    })
   }
 
+  ngOnInit(): void {}
+
+  //returns array of folders
+  getFolders(){
+    return this.folderArray;
+  }
+
+  //on folder click listerner
   onSelect(folder){
-    this.router.navigate(['/folders',this.parentData+"/"+folder.id]);
+    this.router.navigate(['/files',folder.id],{relativeTo:this.route});
   }
 
 }

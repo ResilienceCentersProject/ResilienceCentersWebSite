@@ -29,20 +29,6 @@
     </div>
 
     <div id="page-Title">אתר הדרכה מרכזי חוסן</div>
-
-
-    <div *ngIf="!get_loggedIn(); then thenBlock; else elseBlock"></div>
-
-    <ng-template #thenBlock>
-      <input #userInput type="password" placeholder="הכנס סיסמא">
-      <button (click)="check_code(userInput.value)" >{{get_logMessage()}}</button>
-    </ng-template>
-
-    <ng-template #elseBlock>
-      <button (click)="check_loggedIn()">תיקיות</button>
-      <button (click)="logout()" >{{get_logMessage()}}</button>
-    </ng-template>
-
   
 
   </header>
@@ -68,8 +54,8 @@
         </div>
       </div>
 
-      <!-- <a id="general-public" class="navTag" routerLink="/public-info">מידע לקהל הרחב</a> -->
-      <!-- <a id="volunteers-and-workers" class="navTag" routerLink="/team-info">מידע למתנדבים ברשות</a> -->
+      <a id="authorized-zone" class="navTag" (click)="checkAuth()">התחברות למורשים</a>
+      
       <a id="contact-us" class="navTag" routerLink="/contact-us">צור קשר</a>
     </div>
   </nav>

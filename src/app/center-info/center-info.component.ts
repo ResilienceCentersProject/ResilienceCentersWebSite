@@ -10,20 +10,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class CenterInfoComponent implements OnInit {
 
   public centerId="";
-  public temp_isSamaria;//temporary
   constructor(private route: ActivatedRoute) { }
-
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       let id=params.get('id');
       this.centerId=id;
-      if(id == "samaria"){
-        this.temp_isSamaria=true;//temporary
-      }
-      else{
-        this.temp_isSamaria=false;//temporary
-      }
     });
   }
 
