@@ -1,0 +1,17 @@
+<div *ngIf="!isSelected; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <div (click)="onSelect(file.url)" *ngFor="let file of files">
+        <div class="file">{{file.name}}</div>  
+    </div>
+</ng-template>
+
+<ng-template #elseBlock>
+    <button id="close-pdf" (click)="closePdf()">חזור לרשימת קבצים</button>
+    <div id="div-file">
+        <embed [src]="fileURL" type="application/pdf" width="100%" height="600px" />
+    </div>
+</ng-template>
+
+
+
