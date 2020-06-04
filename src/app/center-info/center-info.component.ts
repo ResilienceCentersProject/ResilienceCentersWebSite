@@ -14,10 +14,8 @@ export class CenterInfoComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
       this.centerId = id;
+      document.getElementById("center-info").innerHTML = '<iframe width="100%"  onload=javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));  frameBorder="0" src="assets/centers/' + this.centerId + '.html"></iframe>';
     });
-    document.getElementById("center-info").innerHTML = '<iframe width="100%"  onload=javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));  frameBorder="0" src="assets/centers/' + this.centerId + '.html"></iframe>';
   }
 
 }
-
-
