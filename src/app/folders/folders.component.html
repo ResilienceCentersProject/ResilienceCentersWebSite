@@ -1,5 +1,8 @@
-   <div (click)="onSelect(folder)" *ngFor="let folder of folderArray">
-       <div class="folder" [id]="folder.id">{{folder.name}}</div>  
-   </div>
+<div (click)="onSelect(folder)" *ngFor="let folder of getFolders()">
+    <div class="folder" [id]="folder.id">{{folder.name}}</div>  
+</div>
+
+
+
 
 

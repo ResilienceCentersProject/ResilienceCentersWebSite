@@ -15,6 +15,7 @@ export class AuthorizedZoneComponent implements OnInit {
 
   }
 
+  //btn logout listener
   logout() {
     this.authService.logout();
   }

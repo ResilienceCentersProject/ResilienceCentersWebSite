@@ -1,13 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router,ParamMap } from '@angular/router';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-import { Observable } from 'rxjs';
-//import { map } from 'rxjs/operators'
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 export interface Folder{
-  name:string;
   id:string;
+  name:string;
 }
 
 @Component({
@@ -15,61 +12,37 @@ export interface Folder{
   templateUrl: './folders.component.html',
   styleUrls: ['./folders.component.css']
 })
+
+//This Component is to be used only by Authorized-zone!
 export class FoldersComponent implements OnInit {
 
-  private dbPath='/folders';
+  private dbPath='/folders';//path to folders in realtime data base
+  private folderArray: Array<Folder>=[];//Array for folders: each folder has id and name
 
-  folders: Observable<any[]>|any;
-  folderArray: Array<{id:string, name:string}>=[];
-  
-  
+
   constructor(private router: Router, private route:ActivatedRoute, private db: AngularFireDatabase) { 
-    this.folders= db.list(this.dbPath).valueChanges()
+    
+    this.db.list(this.dbPath).valueChanges()
     .subscribe(data => {
 
-      console.log(data);
-      console.log(data[0]["name"]);
-      console.log(data[0]["id"]);
-      console.log(data.length);
-      let i;
-      for( i=0; i< data.length; i++){
+      //inject data foler content in to folderArray:
+      for( let i=0; i< data.length; i++){
         this.folderArray.push({id: data[i]["id"], name: data[i]["name"]});
       }
 
-      console.log(this.folderArray);
     })
   }
 
-  
+  ngOnInit(): void {}
 
-
-
-  
-
-  // getFolderList(){
-  //   this.folders.snapshotChanges().pipe(
-  //     map(changes =>
-  //       changes.map(c =>
-  //         ({name:c.payload.key}))
-  //     )
-  //   )
-  // }
-  
-
-  // public folders=[//these will change according to the tag that wants to use folder componant
-  //   {"id":"folder1" ,"name":"folder 1"},
-  //   {"id":"folder2" ,"name":"folder 2"},
-  //   {"id":"folder3" ,"name":"folder 3"},
-  //   {"id":"folder4" ,"name":"folder 4"},
-  // ];
-
-
-  ngOnInit(): void {
-    //console.log(this.folders);
+  //returns array of folders
+  getFolders(){
+    return this.folderArray;
   }
 
+  //on folder click listerner
   onSelect(folder){
-    this.router.navigate(['/folders',folder.id]);
+    this.router.navigate(['/files',folder.id],{relativeTo:this.route});
   }
 
 }

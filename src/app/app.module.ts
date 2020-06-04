@@ -14,7 +14,6 @@ import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
-//import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AuthService } from "./services/auth.service";
 /*-----FIREBASE------*/
 
@@ -30,7 +29,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     FoldersComponent,
     LocationComponent,
     SlideshowComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +40,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
     /*-----FIREBASE------*/
     AngularFireModule.initializeApp(environment.firebaseConfig),//note: enviroment.firebase_object_name
-    //AngularFireAnalyticsModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule, // for database
     /*-----FIREBASE------*/

@@ -10,17 +10,17 @@ import { AuthService } from "../services/auth.service";
 })
 export class LoginComponent implements OnInit {
 
-  email: string;
-  password: string;
-
+  public email: string;
+  public password: string;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() { }
   
+  //listener to login button
   login() {
     this.authService.login(this.email, this.password);
-    this.email = this.password = '';  
+    this.email = this.password = '';//empry strings 
   }
 
 
