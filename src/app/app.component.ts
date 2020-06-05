@@ -17,9 +17,12 @@ export class AppComponent {
     {"id":"bedouin-society","hebName":"החברה הבדואית"},
   ];
   public subjects=[
-    {"id":"subject-1","hebName":"נושא-1"},
-    {"id":"subject-2","hebName":"נושא-2"},
-    {"id":"subject-3","hebName":"נושא-3"},
+    {"id":"fromTheNews","hebName":"מהעיתונות"},
+    {"id":"inEmergency","hebName":"בחירום"},
+    {"id":"infoForEducationSystems","hebName":"מידע למסגרות חינוך"},
+    {"id":"infoForParentsInEmergency","hebName":"מידע להורים בשעות חירום"},
+    {"id":"inRoutine","hebName":"בשגרה"},
+    {"id":"volunteers","hebName":"מתנדבים"},
   ];
   
   //constructor(private router: Router, private route:ActivatedRoute, private authGuardService: AuthGuardService) { }
