@@ -24,12 +24,20 @@
 
   <header>
 
-    <div id="page-Logo">
+    <div id="page-title">
+      <img id="page-pic" src="assets/images/ITCResilience-logo.png"/>
+    </div>
+
+    <div id="page-logo">
       <img id="page-pic" src="assets/images/ITC-logo.png"/>
     </div>
 
-    <div id="page-Title">אתר הדרכה מרכזי חוסן</div>
-  
+    <!-- <div id="page-Logo">
+      <img id="page-pic" src="assets/images/ITC-logo.png"/>
+    </div>
+
+    <div id="page-Title">אתר הדרכה מרכזי חוסן</div> -->
+
 
   </header>
 
@@ -40,7 +48,7 @@
         <a id="dropdown-Resilience-Centers" class="dropbtn navTag">מרכז חוסן לפי אזור גיאוגרפי</a>
         <div class="dropdown-content" id="drop-click">
             <div (click)="onSelect(center)" class="navTag" *ngFor="let center of centers">
-                <a [id]="center.id">{{center.hebName}}</a> 
+                <a [id]="center.id">{{center.hebName}}</a>
             </div>
         </div>
       </div>
@@ -49,27 +57,28 @@
         <a id="general-public" class="dropbtn navTag">מידע לקהל הרחב</a>
         <div class="dropdown-content" id="drop-click">
             <div (click)="onSelectSubject(subject)" class="navTag" *ngFor="let subject of subjects">
-                <a [id]="subject.id">{{subject.hebName}}</a> 
+                <a [id]="subject.id">{{subject.hebName}}</a>
             </div>
         </div>
       </div>
 
       <a id="authorized-zone" class="navTag" (click)="checkAuth()">התחברות למורשים</a>
-      
+
       <a id="contact-us" class="navTag" routerLink="/contact-us">צור קשר</a>
     </div>
   </nav>
 
-
-  <main class="content" role="main">
-    <router-outlet></router-outlet>
-  </main>
+  <hr/>
+  <div id="main-section">
+    <main class="content" role="main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 
   <footer dir=ltr>
-    <hr />
+    <hr/>
     <div id="creators">Ⓒ Naomi Resnik - Mayan Shaked - Shmuel Eliasian - Matanya Jellinek - Gal Elfersy</div>
   </footer>
-
 </body>
 
 </html>

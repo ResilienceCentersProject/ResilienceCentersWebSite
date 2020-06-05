@@ -15,17 +15,17 @@ export class ContactUsComponent implements OnInit {
   ngOnInit(): void {
       this.submissionForm = this.firestore.collection('submissions');
   }
-   
+
   submitData() {
     let data = {
-      name:(<HTMLInputElement>document.getElementById("fullName")).value,
-      email:(<HTMLInputElement>document.getElementById("email")).value,
-      phone:(<HTMLInputElement>document.getElementById("phone")).value,
-      contactIssue:(<HTMLInputElement>document.getElementById("contactIssue")).value,
-      contactCenter:(<HTMLInputElement>document.getElementById("contactCenter")).value,
+      name:(<HTMLInputElement>document.getElementById("fullName")).value + "<br>",
+      email:(<HTMLInputElement>document.getElementById("email")).value + "<br>",
+      phone:(<HTMLInputElement>document.getElementById("phone")).value + "<br>",
+      contactIssue:(<HTMLInputElement>document.getElementById("contactIssue")).value + "<br>",
+      contactCenter:(<HTMLInputElement>document.getElementById("contactCenter")).value + "<br>",
       message:(<HTMLInputElement>document.getElementById("message")).value
     };
-    
+
   this.submissionForm.add(data).then().catch(err => console.log(err))
   .finally(() => {
     (<HTMLInputElement>document.getElementById("fullName")).value = "";

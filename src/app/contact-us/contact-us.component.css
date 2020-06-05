@@ -1,4 +1,9 @@
 /* contact us page*/
+#contact-title{
+  /* color: rgb(104, 141, 243); */
+  color: #0c87bf;
+  font-size: 140%;
+}
 
 #infoContact {
     text-align: center;
@@ -6,9 +11,10 @@
 }
 
 .contact-space {
-    width: 150px;
+    width: 200px;
     height: 10px;
-    background: #34495e;
+    /* background: rgb(104, 141, 243); */
+    background: #0c87bf;
     margin: 40px auto;
 }
 
@@ -16,6 +22,8 @@
     max-width: 35%;
     margin: auto;
     overflow: hidden;
+    padding: 7px;
+    margin-top: -2%;
 }
 
 .contact-form-info {
@@ -24,10 +32,11 @@
     box-sizing: border-box;
     margin: 20px 0;
     border: 0;
-    background: black;
+    background: rgba(245, 151, 43, 0.85);
     padding: 20px 40px;
     outline: none;
-    color: #ddd;
+    color: black;
+    font-weight: bold;
     transition: 0.5s;
     font-size: 15px;
     text-align: right;
@@ -46,17 +55,22 @@
 
 .contact-form-send {
     float: left;
-    background: #34495e;
+    background: #d67e1a;
     color: whitesmoke;
     padding: 12px 50px;
     border-radius: 20px;
     cursor: pointer;
     transition: 0.5s;
     outline: none;
+    font-weight: bold;
+}
+.contact-form-send:hover {
+  background: #0b8e36;
 }
 
+
 /*-------select---------*/
-select{
+/* select{
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -72,5 +86,5 @@ select{
     font-family: Arial;
     border-radius: 20px;
     -webkit-appearance: none;
-    -moz-appearance: none;   
-}
+    -moz-appearance: none;
+} */
