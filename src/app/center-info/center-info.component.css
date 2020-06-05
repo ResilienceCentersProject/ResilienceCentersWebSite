@@ -1,6 +1,24 @@
-#center-info{
-    font: Ariel
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+#center-info {
+  font-family: 'Alef', sans-serif;
 }
+
+/*
+
+.who-we-are {
+  width: 70%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.title-info{
+  border: 1px solid black;
+} */
+
+/* #center-info{
+    font: Ariel;
+}
+
 p, ul, table, a, h2{
     font-size: medium;
     font-style: normal;
@@ -28,9 +46,9 @@ li{
 }
 
 #workshops{
-    background: lightcyan;  
+    background: lightcyan;
 }
 
 #phone-numbers{
     background: lightgoldenrodyellow;
-}
+} */

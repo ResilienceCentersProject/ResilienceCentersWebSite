@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-center-info',
@@ -14,7 +15,12 @@ export class CenterInfoComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
       this.centerId = id;
-      document.getElementById("center-info").innerHTML = '<iframe width="100%"  scrolling="no"  onload=javascript:(function(o){o.style.height=o.contentWindow.document.documentElement.scrollHeight+"px";}(this));  frameBorder="0" src="assets/centers/' + this.centerId + '.html"></iframe>';
+      // document.getElementById("center-info").innerHTML = '<iframe width="100%"  scrolling="no"  onload=javascript:(function(o){o.style.height=o.contentWindow.document.documentElement.scrollHeight+"px";}(this));  frameBorder="0" src="assets/centers/' + this.centerId + '.html"></iframe>';
+
+      // let loadCenter = $("#center-info").load(`assets/centers/${this.centerId}.html`);
+      // document.getElementById("center-info").innerHTML = loadCenter + "";
+      // $("#center-info").replaceWith(`${loadCenter}`);
+      $("#center-info").load(`assets/centers/${this.centerId}.html`);
     });
   }
 
