@@ -27,6 +27,14 @@ export class ContactUsComponent implements OnInit {
     };
     
   this.submissionForm.add(data).then().catch(err => console.log(err))
-  .finally();
+  .finally(() => {
+    (<HTMLInputElement>document.getElementById("fullName")).value = "";
+    (<HTMLInputElement>document.getElementById("email")).value = "";
+    (<HTMLInputElement>document.getElementById("phone")).value = "";
+    (<HTMLInputElement>document.getElementById("contactIssue")).value = "";
+    (<HTMLInputElement>document.getElementById("contactCenter")).value = "";
+    (<HTMLInputElement>document.getElementById("message")).value = "";
+    alert("בקשתך התקבלה ותענה בהקדם.");
+  });
   }
 }

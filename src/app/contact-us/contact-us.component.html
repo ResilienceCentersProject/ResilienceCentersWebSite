@@ -6,16 +6,8 @@
         <input type="text" class="contact-form-info" id="fullName" placeholder="שם מלא">
         <input type="email" class="contact-form-info" id="email" placeholder="אימייל">
         <input type="tel" class="contact-form-info" id="phone" placeholder="פלאפון">
-        <select id="contactIssue">
-            <option>--בחר נושא פנייה--</option>
-            <option>תרומות</option>
-            <option>פנייה לטיפול</option>
-            <option>תרומות</option>
-            <option>אחר</option>
-        </select>
-        <select id="contactCenter">
-            <option>--בחר מרכז לפנייה--</option>
-        </select>
+        <input type="text" class="contact-form-info" id="contactIssue" placeholder="בחר נושא פנייה">
+        <input type="text" class="contact-form-info" id="contactCenter" placeholder="בחר מרכז לפנייה">
         <textarea id="message" class="contact-form-info" placeholder="הודעה"></textarea>
         <input type="submit" class="contact-form-send" value="שלח" (click)="submitData()">
     </form>
