@@ -2,16 +2,43 @@ html, body {
   height: 100%;
   width: 100%;
   margin: 0;
+
+  background-image: url('../assets/images/ITC-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
+
+/* body {
+  background-image: url('../assets/images/ITC-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+} */
 
 /* logo & title design */
 
+header {
+  margin: auto;
+  text-align: center;
+  margin-top: -10px;
+}
+
+/* old - for 2 diffrent picture
 header {
   width: 80%;
   display: flex;
   justify-content: space-between;
   margin: auto;
-}
+} */
 
 /* navigetion bar design */
 
@@ -132,7 +159,7 @@ main {
 /*----------------------------------------------------------------------*/
 
 #main-section {
-  min-height: calc(65vh);
+  min-height: calc(68vh);
 }
 
 footer {
