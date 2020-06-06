@@ -32,6 +32,7 @@ table, th, td {
 
 #relevant-links-table {
   padding: 10px;
+  padding-right: 300px;
 }
 
 #relevant-links{
@@ -43,10 +44,10 @@ table, th, td {
 }
 
 #all-table-data {
-  width: 78%;
+  width: 80%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 20px;
   font-family: 'Alef', sans-serif;
 }
