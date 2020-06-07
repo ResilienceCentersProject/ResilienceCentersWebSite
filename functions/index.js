@@ -4,14 +4,16 @@ const nodemailer =require('nodemailer');
 admin.initializeApp()
 require('dotenv').config()
 
+const {SENDER_EMAIL,SENDER_PASSWORD} = process.env;
+
 exports.sendEmailNotification=functions.firestore.document('submissions/{docId}')
 .onCreate((snap,ctx)=>{
     const data=snap.data();
     let authData=nodemailer.createTransport({
         service: 'gmail',
         auth:{
-            user:'itcresilience@gmail.com',
-            pass:'nrfzhjuxi123'
+            user:SENDER_EMAIL,
+            pass:SENDER_PASSWORD
         }
     });
 let mailText = `
