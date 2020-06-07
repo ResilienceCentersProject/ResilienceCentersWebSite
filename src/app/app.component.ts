@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from "./auth/services/auth.service";
+import { element, by } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -49,5 +50,6 @@ export class AppComponent {
     }
   }
   
+ // public url = item.product_image_urls.filter(arr=>arr.match("homepage")!==null)
 
 }

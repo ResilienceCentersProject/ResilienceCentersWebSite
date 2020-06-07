@@ -23,6 +23,8 @@ import { AuthService } from "./auth/services/auth.service";
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 /*-----STORAGE-REALTIME-DATABSE-----*/
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';//For the search in Auth zone
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
    AngularFireAuthModule,
    AngularFireDatabaseModule, // for database
    /*-----FIREBASE------*/
-
+   Ng2SearchPipeModule //For the search in Auth zone
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

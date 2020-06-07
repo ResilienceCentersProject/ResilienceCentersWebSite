@@ -5,6 +5,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export interface Folder{
   id:string;
   name:string;
+  key: string;
 }
 
 @Component({
@@ -19,6 +20,7 @@ export class FoldersComponent implements OnInit {
   private dbPath='/folders';//path to folders in realtime data base
   private folderArray: Array<Folder>=[];//Array for folders: each folder has id and name
 
+  searchWord: string;//the user input in the search filed
 
   constructor(private router: Router, private route:ActivatedRoute, private db: AngularFireDatabase) { 
     
@@ -27,7 +29,8 @@ export class FoldersComponent implements OnInit {
 
       //inject data foler content in to folderArray:
       for( let i=0; i< data.length; i++){
-        this.folderArray.push({id: data[i]["id"], name: data[i]["name"]});
+        this.folderArray.push({id: data[i]["id"], name: data[i]["name"], key: data[i]["key"]});
+
       }
 
     })

@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export interface File{
   name:string, 
   url:URL
+  key: string;
 }
 
 @Component({
@@ -25,6 +26,7 @@ export class FilesComponent implements OnInit {
 
   public fileURL;//protected fileUrl
 
+  searchWord: string;//the user input in the search filed
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private sanitizer: DomSanitizer) { }
 
@@ -47,7 +49,7 @@ export class FilesComponent implements OnInit {
 
       //inject fata files in to file array
       for(let i=0; i< data.length; i++){
-        this.fileArray.push({name: data[i]["name"], url: data[i]["url"]});
+        this.fileArray.push({name: data[i]["name"], url: data[i]["url"], key: data[i]["key"]});
       }
     
     })

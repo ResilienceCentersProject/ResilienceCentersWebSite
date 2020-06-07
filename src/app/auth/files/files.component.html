@@ -1,9 +1,17 @@
+
 <div *ngIf="!isSelected; then thenBlock else elseBlock"></div>
 
 <ng-template #thenBlock>
-    <div (click)="onSelect(file.url)" *ngFor="let file of files">
+    <!-- For the search engine -->
+    <div class="searchClass">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off" placeholder="&#61442;" >
+    </div>
+    <!-- For the search engine -->
+
+    <div (click)="onSelect(file.url)" *ngFor="let file of files| filter:searchWord"> <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
         <div class="file">{{file.name}}</div>  
     </div>
+
 </ng-template>
 
 <ng-template #elseBlock>

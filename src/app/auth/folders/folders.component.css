@@ -19,3 +19,22 @@
     top: -12px;
     left: 0px;
 }
+
+/* For the search engine  */
+.container {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: #405065;
+  }
+  .searchClass {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin:auto;
+  }
+  .form-control {
+    box-shadow: 0 10px 40px 0 #B0C1D9;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+  /* For the search engine  */

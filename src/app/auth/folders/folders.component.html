@@ -1,3 +1,10 @@
-<div (click)="onSelect(folder)" *ngFor="let folder of getFolders()">
-    <div class="folder" [id]="folder.id">{{folder.name}}</div>  
+<!-- For the search engine -->
+<div class="searchClass">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off" placeholder="&#61442;" >
 </div>
+<!-- For the search engine -->
+
+<div (click)="onSelect(folder)" *ngFor="let folder of getFolders()| filter:searchWord"> <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
+    <div class="folder" [id]="folder.id">{{folder.name}}</div> 
+</div>
+
