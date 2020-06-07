@@ -1,15 +1,29 @@
-
 <div id="infoContact">
-    <div id="contact-title"><h1>צור קשר</h1></div>
+    <div id="contact-title">
+        <h1>צור קשר</h1>
+    </div>
     <div class="contact-space"></div>
     <form class="contact-form" action="" method="post">
-        <input type="text" class="contact-form-info" id="fullName" placeholder="שם מלא">
-        <input type="email" class="contact-form-info" id="email" placeholder="אימייל">
-        <input type="tel" class="contact-form-info" id="phone" placeholder="פלאפון">
-        <input type="text" class="contact-form-info" id="contactIssue" placeholder="בחר נושא פנייה">
-        <input type="text" class="contact-form-info" id="contactCenter" placeholder="בחר מרכז לפנייה">
-        <textarea id="message" class="contact-form-info" placeholder="הודעה"></textarea>
+        <input type="text" class="contact-form-info" id="fullName" placeholder="שם מלא*" required>
+        <input type="email" class="contact-form-info" id="email" placeholder="אימייל*" required>
+        <input type="tel" class="contact-form-info" id="phone" placeholder="פלאפון*" required>
+        <input type="text" class="contact-form-info" id="contactIssue" placeholder="בחר נושא פנייה*" required>
+        <input type="text" class="contact-form-info" id="livingPlace" placeholder="בחר איזור מגורים*" required>
+        <select type="text" class="contact-form-info" id="contactCenter" required>
+            <option value="" disabled selected hidden >בחר מרכז לפנייה*</option>
+            <option value="ashkelon">אשקלון</option>
+            <option value="ashkelonBeach">חוף אשקלון</option>
+            <option value="bedouinSociety">החברה הבדואית</option>
+            <option value="benjamin">בנימין</option>
+            <option value="eshkol">אשכול</option>
+            <option value="etzion">עציון</option>
+            <option value="judea">יהודה</option>
+            <option value="negevFields">שדות נגב</option>
+            <option value="sderot">שדרות</option>
+            <option value="shaarHanegev">שער הנגב</option>
+            <option value="shomron">שומרון</option>
+        </select>
+        <textarea id="message" class="contact-form-info" placeholder="הודעה*" required></textarea>
         <input type="submit" class="contact-form-send" value="שלח" (click)="submitData()">
     </form>
 </div>
-

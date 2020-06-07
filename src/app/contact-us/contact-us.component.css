@@ -1,8 +1,14 @@
 /* contact us page*/
-#contact-title{
-  /* color: rgb(104, 141, 243); */
-  color: #0c87bf;
-  font-size: 140%;
+
+option {
+    color: white;
+    background-color: #0c87bf;
+}
+
+#contact-title {
+    /* color: rgb(104, 141, 243); */
+    color: #0c87bf;
+    font-size: 140%;
 }
 
 #infoContact {
@@ -32,10 +38,10 @@
     box-sizing: border-box;
     margin: 20px 0;
     border: 0;
-    background: rgba(245, 151, 43, 0.85);
+    background: rgba(255, 136, 0, 0.904);
     padding: 20px 40px;
     outline: none;
-    color: black;
+    color: white;
     font-weight: bold;
     transition: 0.5s;
     font-size: 15px;
@@ -64,12 +70,15 @@
     outline: none;
     font-weight: bold;
 }
+
 .contact-form-send:hover {
-  background: #0b8e36;
+    background: #0b8e36;
 }
 
 
 /*-------select---------*/
+
+
 /* select{
     display: block;
     width: 100%;
@@ -88,3 +97,10 @@
     -webkit-appearance: none;
     -moz-appearance: none;
 } */
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
