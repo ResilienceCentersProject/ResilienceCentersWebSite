@@ -3,23 +3,32 @@
 
 <ng-template #thenBlock>
     <!-- For the search engine -->
-    <div class="searchClass">
-        <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off" placeholder="&#61442;" >
+    <div class="search-container">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off" placeholder="חיפוש" >
     </div>
     <!-- For the search engine -->
 
+    <!--For Files-->
     <div (click)="onSelect(file.url)" *ngFor="let file of files| filter:searchWord"> <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
-        <div class="file">{{file.name}}</div>  
+        <div class='thread-reply-file'>
+            <img [src]='getIcon(file.type)'>
+            <span class="file">{{file.name}}</span>
+          </div>
     </div>
+    <!--For Files-->
 
 </ng-template>
 
 <ng-template #elseBlock>
     <button id="close-pdf" (click)="closePdf()">חזור לרשימת קבצים</button>
+
     <div id="div-file">
         <embed [src]="fileURL" type="application/pdf" width="100%" height="600px" />
     </div>
 </ng-template>
+
+
+ 
 
 
 

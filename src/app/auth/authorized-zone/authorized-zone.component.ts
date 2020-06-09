@@ -8,7 +8,7 @@ import { AuthService } from "../services/auth.service";
   styleUrls: ['./authorized-zone.component.css']
 })
 export class AuthorizedZoneComponent implements OnInit {
-
+  
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
@@ -17,6 +17,7 @@ export class AuthorizedZoneComponent implements OnInit {
 
   //btn logout listener
   logout() {
+    //document.querySelector('app-folders').replaceWith("");
     this.authService.logout();
   }
 

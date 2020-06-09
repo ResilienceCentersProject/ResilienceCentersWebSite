@@ -25,6 +25,8 @@ export class AppComponent {
     {"id":"inRoutine","hebName":"בשגרה"},
     {"id":"volunteers","hebName":"מתנדבים"},
   ];
+
+  public auth_title="התחברות למורשים";
   
   //constructor(private router: Router, private route:ActivatedRoute, private authGuardService: AuthGuardService) { }
   constructor(private router: Router, private route:ActivatedRoute, private authService: AuthService) { }
@@ -49,6 +51,16 @@ export class AppComponent {
       this.router.navigate(['/login']);
     }
   }
+
+  // changeAuthTitle(){
+  //   if(this.authService.isLoggedIn){
+  //     this.auth_title = "ספריית ידע/התנקות"
+  //   }
+  //   else{
+  //     this.auth_title="התחברות למורשים";
+  //   }
+
+  // }
   
  // public url = item.product_image_urls.filter(arr=>arr.match("homepage")!==null)
 

@@ -7,6 +7,7 @@ export interface File{
   name:string, 
   url:URL
   key: string;
+  type:string;
 }
 
 @Component({
@@ -49,7 +50,7 @@ export class FilesComponent implements OnInit {
 
       //inject fata files in to file array
       for(let i=0; i< data.length; i++){
-        this.fileArray.push({name: data[i]["name"], url: data[i]["url"], key: data[i]["key"]});
+        this.fileArray.push({name: data[i]["name"], url: data[i]["url"], key: data[i]["key"], type: data[i]["type"]});
       }
     
     })
@@ -74,6 +75,16 @@ export class FilesComponent implements OnInit {
   //return true if html file was selected
   get isSelected(){
     return this.fileSelected;
+  }
+
+  //https://www.iconfinder.com/search/?q=mp4&from=homepage For icon
+  getIcon(type:string){
+    if(type === "mp4"){
+      return "https://cdn4.iconfinder.com/data/icons/file-extensions-1/64/mp4s-512.png"
+    }
+    else{
+      return "https://cdn4.iconfinder.com/data/icons/file-extensions-1/64/pdfs-512.png"
+    }
   }
 
   //listener for close-pfd btn 
