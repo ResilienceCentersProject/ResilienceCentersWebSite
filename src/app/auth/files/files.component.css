@@ -5,7 +5,6 @@
     max-width: 500px;
 	padding-bottom: 50px;
 	border-radius: 6px;
-	
   }
   .form-control {
     box-shadow: 0 10px 40px 0 #B0C1D9;
@@ -46,11 +45,7 @@
   .thread-reply-file img {
 	width: 50px;
   }
-  div[title=Comments]:after {
-	content: '';
-	display: block;
-	clear: both;
-  }
+ 
   /*for files*/
 
   /*go-back button*/
@@ -76,3 +71,5 @@
 	background: #43A047;
   }
   /*go-back button*/
+
+  

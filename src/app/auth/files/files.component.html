@@ -2,6 +2,7 @@
 <div *ngIf="!isSelected; then thenBlock else elseBlock"></div>
 
 <ng-template #thenBlock>
+    
     <!-- For the search engine -->
     <div class="search-container">
         <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off" placeholder="חיפוש" >
@@ -13,7 +14,7 @@
         <div class='thread-reply-file'>
             <img [src]='getIcon(file.type)'>
             <span class="file">{{file.name}}</span>
-          </div>
+        </div>
     </div>
     <!--For Files-->
 
