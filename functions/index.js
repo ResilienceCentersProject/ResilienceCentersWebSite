@@ -23,6 +23,7 @@ let mailText = `
 מספר הפונה: ${data.phone}\r\n
 מרכז הפניה: ${data.contactCenter}\r\n
 נושא הפניה: ${data.contactIssue}\r\n
+איזור מגורים: ${data.livingPlace}\r\n
 הודעה: ${data.message}\r\n
 `;
 authData.sendMail({
