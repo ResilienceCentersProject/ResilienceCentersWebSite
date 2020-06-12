@@ -1,17 +1,16 @@
 <!--h3> Welcome to {{locationId}}!!</h3-->
 
-<div (click)="onSelect(center)" class="navTag" *ngFor="let center of centers">
-    <a [id]="center.id">{{center.hebName}}</a> 
+<div id="center-button">
+  <div (click)="onSelect(center)" class="navTag" *ngFor="let center of centers">
+    <a [id]="center.id">{{center.hebName}}</a>
+  </div>
 </div>
 
-
 <!--div class="navTag" *ngFor="let center of centers">
-    <a [id]="center.id">{{center.hebName}}</a> 
+    <a [id]="center.id">{{center.hebName}}</a>
 </div>
 
 <app-center-info></app-center-info-->
 
-<p> . בנוסף ללחצנים שיאפשרו לצפות במידע הרלוונטי למרכז הנבחר, יהיה בדף זה מידע ותמונות שרלוונטיים לכל המרכזים. האם אתם רוצים שבלחיצה על כפתור נעבור לדף חדש (מה שקורה עכשיו) או שהמידע הרלוונטי יופיע מתחת למידע שהדף מציג כעת ללא מחיקתו</p>
-
-
-
+<p> . בנוסף ללחצנים שיאפשרו לצפות במידע הרלוונטי למרכז הנבחר, יהיה בדף זה מידע ותמונות שרלוונטיים לכל המרכזים. האם אתם
+  רוצים שבלחיצה על כפתור נעבור לדף חדש (מה שקורה עכשיו) או שהמידע הרלוונטי יופיע מתחת למידע שהדף מציג כעת ללא מחיקתו</p>
