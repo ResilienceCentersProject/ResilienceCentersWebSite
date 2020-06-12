@@ -15,9 +15,8 @@ export class AuthorizedZoneComponent implements OnInit {
 
   }
 
-  //btn logout listener
+  //btn logout listener: This is for later use, the code is ready and working but it is not needed right now
   logout() {
-    //document.querySelector('app-folders').replaceWith("");
     this.authService.logout();
   }
 

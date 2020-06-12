@@ -46,11 +46,7 @@
   .thread-reply-folder img {
 	width: 50px;
   }
-  div[title=Comments]:after {
-	content: '';
-	display: block;
-	clear: both;
-  }
+  
   /*For folders*/
 
 

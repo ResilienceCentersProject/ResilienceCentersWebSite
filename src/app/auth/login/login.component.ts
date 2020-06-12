@@ -20,8 +20,7 @@ export class LoginComponent implements OnInit {
   
   //listener to login button
   login() {
-    //this.authService.login(this.email, this.password);
-    this.authService.login("itcresilience@gmail.com", this.password);
-    this.email = this.password = '';//empry strings
+    this.authService.login(this.email, this.password);
+    this.email = this.password = '';//empty strings
   }
 }

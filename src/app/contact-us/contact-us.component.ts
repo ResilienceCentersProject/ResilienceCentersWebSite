@@ -34,6 +34,7 @@ export class ContactUsComponent implements OnInit {
           (<HTMLInputElement>document.getElementById("phone")).value = "";
           (<HTMLInputElement>document.getElementById("contactIssue")).value = "";
           (<HTMLInputElement>document.getElementById("contactCenter")).value = "";
+          (<HTMLInputElement>document.getElementById("livingPlace")).value = "";
           (<HTMLInputElement>document.getElementById("message")).value = "";
           alert("בקשתך התקבלה ותענה בהקדם.");
         });
@@ -59,8 +60,6 @@ function verifyFields(data) {
   if (data.contactCenter == "<br>")
     return false;
   if (data.message == "<br>")
-    return false;
-  if (data.livingPlace == "<br>")
     return false;
 }
 

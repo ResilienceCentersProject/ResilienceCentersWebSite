@@ -26,6 +26,7 @@ export class FilesComponent implements OnInit {
   private fileSelected=false;//set to true if a html file selected
 
   public fileURL;//protected fileUrl
+  private dbData;//will hold object from firebase
 
   searchWord: string;//the user input in the search filed
 
@@ -45,7 +46,7 @@ export class FilesComponent implements OnInit {
   //this function gets data from realtime database and sets the array of files
   setFileArray(){
     
-    this.db.list(this.dbPath).valueChanges()
+    this.dbData=this.db.list(this.dbPath).valueChanges()
     .subscribe(data => {
 
       //inject fata files in to file array
@@ -90,6 +91,12 @@ export class FilesComponent implements OnInit {
   //listener for close-pfd btn 
   closePdf(){
     this.fileSelected=false;
+  }
+
+
+  //destroy firebaseData before logging out
+  ngOnDestroy(){
+    this.dbData.unsubscribe();
   }
 
 
