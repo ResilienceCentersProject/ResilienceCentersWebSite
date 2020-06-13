@@ -9,7 +9,7 @@ import { SlideshowComponent } from '../slideshow/slideshow.component';
 
 })
 export class HomePageComponent implements OnInit {
-  public picPath="/pictures/home-page";
+  public picPath="/pictures/home-page";//Will hold the path to the wanted image folder in Data Base
   constructor() { }
 
   ngOnInit(): void {

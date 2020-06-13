@@ -8,9 +8,8 @@ import * as $ from 'jquery';
   styleUrls: ['./center-info.component.css']
 })
 export class CenterInfoComponent implements OnInit {
-  //inputVar=
   public centerId = "";
-  public picPath="/pictures/center-info/";
+  public picPath="/pictures/center-info/";//Will hold the path to the wanted image folder in Data Base
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {

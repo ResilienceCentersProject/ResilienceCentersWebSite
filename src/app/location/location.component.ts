@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router'
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-location',
@@ -7,9 +8,9 @@ import {Router, ActivatedRoute, ParamMap} from '@angular/router'
   styleUrls: ['./location.component.css']
 })
 export class LocationComponent implements OnInit {
-
-
+  public locationId = "";
   public centers;//these will change according to the tag that wants to use folder componant
+  //public picPath="/pictures/center-info/";//Will hold the path to the wanted image folder in Data Base
 
   public gazaStripCenters=[
     {"id":"ashkelon-beach","hebName":"חוף אשקלון"},
@@ -26,19 +27,20 @@ export class LocationComponent implements OnInit {
     {"id":"judea","hebName":"יהודה"},
   ];
 
-  //@Input() public parentData;/*must be the same as in the parent- this tag is located at team-info, public-info and login*/
-
   constructor(private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params:ParamMap)=>{
+    this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
+      this.locationId = id;
+
       if(id == 'judea-and-samaria')
         this.centers = this.judeaAndSamariaCenters;
-      else
+      else//gaza-strip
         this.centers = this.gazaStripCenters;
+      $("#location").load(`assets/location/${this.locationId}.html`);
+      //this.picPath+=`${this.locationId}`;
     });
-
   }
 
   onSelect(center){
