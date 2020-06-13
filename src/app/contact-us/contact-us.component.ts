@@ -34,12 +34,16 @@ export class ContactUsComponent implements OnInit {
           (<HTMLInputElement>document.getElementById("phone")).value = "";
           (<HTMLInputElement>document.getElementById("contactIssue")).value = "";
           (<HTMLInputElement>document.getElementById("contactCenter")).value = "";
+          (<HTMLInputElement>document.getElementById("livingPlace")).value = "";
           (<HTMLInputElement>document.getElementById("message")).value = "";
           alert("בקשתך התקבלה ותענה בהקדם.");
         });
     }
-    else{
-      alert("חסרים שדות שלא מולאו.");
+    else {
+      if (validateEmail(data.email) == false)
+        alert("אימייל לא מתאים.");
+      else
+        alert("חסרים שדות שלא מולאו.");
     }
   }
 }
@@ -47,7 +51,7 @@ export class ContactUsComponent implements OnInit {
 function verifyFields(data) {
   if (data.name == "<br>")
     return false;
-  if (data.email == "<br>")
+  if (validateEmail(data.email) == false)
     return false;
   if (data.phone == "<br>")
     return false;
@@ -57,6 +61,10 @@ function verifyFields(data) {
     return false;
   if (data.message == "<br>")
     return false;
-  if (data.livingPlace == "<br>")
-    return false;
 }
+
+function validateEmail(email) {
+  const re = /\S+@\S+\.\S+/;
+  return re.test(String(email).toLowerCase());
+}
+

@@ -19,12 +19,13 @@ export class FoldersComponent implements OnInit {
 
   private dbPath='/folders';//path to folders in realtime data base
   private folderArray: Array<Folder>=[];//Array for folders: each folder has id and name
+  private dbData;
 
   searchWord: string;//the user input in the search filed
 
   constructor(private router: Router, private route:ActivatedRoute, private db: AngularFireDatabase) { 
     
-    this.db.list(this.dbPath).valueChanges()
+    this.dbData=this.db.list(this.dbPath).valueChanges()
     .subscribe(data => {
 
       //inject data foler content in to folderArray:
@@ -47,6 +48,11 @@ export class FoldersComponent implements OnInit {
   //on folder click listerner
   onSelect(folder){
     this.router.navigate(['/files',folder.id],{relativeTo:this.route});
+  }
+
+  //destroy firebaseData before logging out
+  ngOnDestroy(){
+    this.dbData.unsubscribe();
   }
 
 }

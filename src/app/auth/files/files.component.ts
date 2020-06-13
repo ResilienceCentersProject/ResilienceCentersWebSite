@@ -7,6 +7,7 @@ export interface File{
   name:string, 
   url:URL
   key: string;
+  type:string;
 }
 
 @Component({
@@ -25,6 +26,7 @@ export class FilesComponent implements OnInit {
   private fileSelected=false;//set to true if a html file selected
 
   public fileURL;//protected fileUrl
+  private dbData;//will hold object from firebase
 
   searchWord: string;//the user input in the search filed
 
@@ -44,12 +46,12 @@ export class FilesComponent implements OnInit {
   //this function gets data from realtime database and sets the array of files
   setFileArray(){
     
-    this.db.list(this.dbPath).valueChanges()
+    this.dbData=this.db.list(this.dbPath).valueChanges()
     .subscribe(data => {
 
       //inject fata files in to file array
       for(let i=0; i< data.length; i++){
-        this.fileArray.push({name: data[i]["name"], url: data[i]["url"], key: data[i]["key"]});
+        this.fileArray.push({name: data[i]["name"], url: data[i]["url"], key: data[i]["key"], type: data[i]["type"]});
       }
     
     })
@@ -76,9 +78,25 @@ export class FilesComponent implements OnInit {
     return this.fileSelected;
   }
 
+  //https://www.iconfinder.com/search/?q=mp4&from=homepage For icon
+  getIcon(type:string){
+    if(type === "mp4"){
+      return "https://cdn4.iconfinder.com/data/icons/file-extensions-1/64/mp4s-512.png"
+    }
+    else{
+      return "https://cdn4.iconfinder.com/data/icons/file-extensions-1/64/pdfs-512.png"
+    }
+  }
+
   //listener for close-pfd btn 
   closePdf(){
     this.fileSelected=false;
+  }
+
+
+  //destroy firebaseData before logging out
+  ngOnDestroy(){
+    this.dbData.unsubscribe();
   }
 
 

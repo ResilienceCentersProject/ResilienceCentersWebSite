@@ -8,14 +8,14 @@ import { AuthService } from "../services/auth.service";
   styleUrls: ['./authorized-zone.component.css']
 })
 export class AuthorizedZoneComponent implements OnInit {
-
+  
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
 
   }
 
-  //btn logout listener
+  //btn logout listener: This is for later use, the code is ready and working but it is not needed right now
   logout() {
     this.authService.logout();
   }

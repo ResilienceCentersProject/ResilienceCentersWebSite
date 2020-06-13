@@ -1,26 +1,25 @@
-button {
-	box-shadow:inset 0px 1px 0px 0px #a4e271;
-	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-	background-color:#89c403;
-	border-radius:6px;
-	border:1px solid #74b807;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:27px;
-	font-weight:bold;
-	padding:12px 30px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528009;
-
-
-}
-button:hover {
-	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
-	background-color:#77a809;
-}
-button:active {
-	position:relative;
-	top:1px;
-}
+/*log-out button*/
+ button {
+	font: Ariel;
+	text-align: center;
+	justify-content: center;
+	outline: 0;
+	background: #4CAF50;
+	height: 50px;
+	width:250px;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 20px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-bottom: 1%;
+	position:absolute;
+	bottom: 2px;
+ }
+  button:hover, button:active,.button:focus {
+	background: #43A047;
+  }
+  /*log-out button*/

@@ -27,7 +27,7 @@ export class LocationComponent implements OnInit {
   ];
 
   //@Input() public parentData;/*must be the same as in the parent- this tag is located at team-info, public-info and login*/
-  
+
   constructor(private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class LocationComponent implements OnInit {
       else
         this.centers = this.gazaStripCenters;
     });
-   
+
   }
 
   onSelect(center){
