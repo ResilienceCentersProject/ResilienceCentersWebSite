@@ -34,6 +34,7 @@ export class FoldersComponent implements OnInit {
       }
 
     })
+    //console.log(this.folderArray);
   }
 
   ngOnInit(): void {}

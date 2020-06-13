@@ -8,20 +8,24 @@ import * as $ from 'jquery';
   styleUrls: ['./center-info.component.css']
 })
 export class CenterInfoComponent implements OnInit {
+  //inputVar=
   public centerId = "";
+  public picPath="/pictures/center-info/";
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
       this.centerId = id;
+      this.picPath+=`${this.centerId}`;
       // document.getElementById("center-info").innerHTML = '<iframe width="100%"  scrolling="no"  onload=javascript:(function(o){o.style.height=o.contentWindow.document.documentElement.scrollHeight+"px";}(this));  frameBorder="0" src="assets/centers/' + this.centerId + '.html"></iframe>';
 
       // let loadCenter = $("#center-info").load(`assets/centers/${this.centerId}.html`);
       // document.getElementById("center-info").innerHTML = loadCenter + "";
       // $("#center-info").replaceWith(`${loadCenter}`);
-      $("#center-info").load(`assets/centers/${this.centerId}.html`);
     });
+    $("#center-info").load(`assets/centers/${this.centerId}.html`);
   }
+  
 
 }

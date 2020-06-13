@@ -1,3 +1,14 @@
-<div style="text-align:center">
-    <ng-image-slider #nav [images]="imageObject" [infinite]="true" [autoSlide]="5" [imageSize]="{width: '25%', height: 200}" slideImage="1"></ng-image-slider>
+<div style="text-align:center" *ngIf="this.picArray[0]">
+    <!-- <img id="pic" [src]="getPics()"/> -->
+    <!-- <ng-image-slider  [images]= "getPics()" [infinite]="true" [autoSlide]="5" [imageSize]="{width: '25%', height: 200}" [slideImage]="1" [imagePopup]="true" #nav></ng-image-slider> -->
+    <ng-image-slider #nav
+    [images]="getPics()"
+    [infinite]="true"
+    [autoSlide]="1"
+    [imageSize]="{width: '25%', height: 200}"
+    slideImage="1"></ng-image-slider>
+
 </div>
+<!-- <ng-container *ngIf="this.picArray[0]">
+    <img src="{{this.picArray[0].image }}" />
+</ng-container> -->
