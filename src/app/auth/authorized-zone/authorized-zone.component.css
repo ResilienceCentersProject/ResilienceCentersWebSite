@@ -1,6 +1,6 @@
 /*log-out button*/
  button {
-	font: Ariel;
+	font-family: 'Varela Round', sans-serif;
 	text-align: center;
 	justify-content: center;
 	outline: 0;

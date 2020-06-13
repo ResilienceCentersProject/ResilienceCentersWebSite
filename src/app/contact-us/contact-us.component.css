@@ -46,7 +46,7 @@ option {
     transition: 0.5s;
     font-size: 15px;
     text-align: right;
-    font-family: Arial;
+    font-family: 'Varela Round', sans-serif;
     border-radius: 20px;
 }
 
@@ -103,4 +103,12 @@ option {
     color: white;
     opacity: 1;
     /* Firefox */
+}
+
+h1{
+    font-family: 'Varela Round', sans-serif;
+}
+
+input{
+    font-family: 'Varela Round', sans-serif;
 }

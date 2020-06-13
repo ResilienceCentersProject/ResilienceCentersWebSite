@@ -11,11 +11,11 @@
     box-shadow: 0 10px 40px 0 #B0C1D9;
   }
   .form-control::placeholder  {
-	font:Ariel;
+	font-family: 'Varela Round', sans-serif;
 	font-size: 19px;
   }
   input{
-	  font:Ariel;
+	  font-family: 'Varela Round', sans-serif;
 	  color: blue;
 	  font-size: 18px;
 	  height: 30px;
@@ -30,7 +30,7 @@
 	font-weight: bold;
 	font-size: 18px;
 	color: blue;
-	font-family: arial;
+	font-family: 'Varela Round', sans-serif;
 	float: left;
 	cursor: pointer;
 	margin: 5px;

@@ -4,7 +4,7 @@
   font-size: 1rem;
   color: white;
   text-decoration: none;
-  font-family: arial;
+  font-family: 'Varela Round', sans-serif;
   padding: 10px 0px;
   background-color: rgb(245, 151, 43);
   font-weight: bold;
@@ -25,4 +25,12 @@
   justify-content: space-between;
   padding: 10px;
   margin: auto;
+}
+
+p{
+  font-family: 'Varela Round', sans-serif;
+}
+
+div{
+  font-family: 'Varela Round', sans-serif;
 }

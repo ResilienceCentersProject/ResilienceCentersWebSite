@@ -63,7 +63,7 @@ header {
   letter-spacing: 1px;
   word-spacing: 2px;
   text-decoration: none;
-  font-family: arial;
+  font-family: 'Varela Round', sans-serif;
   padding: 14px 0px;
   /* background-color: rgb(104, 141, 243); */
   background-color: #0c87bf;
@@ -168,6 +168,7 @@ footer {
   width: 100%;
   align-items: center;
   line-height: 25px;
+  font-family: 'Varela Round', sans-serif;
 
   /*added for auth*/
   clear: both;
