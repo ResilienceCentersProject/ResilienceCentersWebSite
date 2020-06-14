@@ -10,7 +10,7 @@ import * as $ from 'jquery';
 export class LocationComponent implements OnInit {
   public locationId = "";
   public centers;//these will change according to the tag that wants to use folder componant
-  //public picPath="/pictures/center-info/";//Will hold the path to the wanted image folder in Data Base
+  public picPath="/pictures/center-info/";//Will hold the path to the wanted image folder in Data Base
 
   public gazaStripCenters=[
     {"id":"ashkelon-beach","hebName":"חוף אשקלון"},
@@ -33,13 +33,12 @@ export class LocationComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
       this.locationId = id;
-
+      this.picPath+=`${this.locationId}`;
       if(id == 'judea-and-samaria')
         this.centers = this.judeaAndSamariaCenters;
       else//gaza-strip
         this.centers = this.gazaStripCenters;
       $("#location").load(`assets/location/${this.locationId}.html`);
-      //this.picPath+=`${this.locationId}`;
     });
   }
 
