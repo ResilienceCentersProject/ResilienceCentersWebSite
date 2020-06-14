@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy  } from '@angular/core';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router'
 import * as $ from 'jquery';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-location',
@@ -8,10 +9,11 @@ import * as $ from 'jquery';
   styleUrls: ['./location.component.css']
 })
 export class LocationComponent implements OnInit {
+  paramsSubscription : Subscription;
   public locationId = "";
   public centers;//these will change according to the tag that wants to use folder componant
-  public picPath="/pictures/center-info/";//Will hold the path to the wanted image folder in Data Base
-
+  public picPath;//Will hold the path to the wanted image folder in Data Base
+ 
   public gazaStripCenters=[
     {"id":"ashkelon-beach","hebName":"חוף אשקלון"},
     {"id":"sderot","hebName":"שדרות"},
@@ -30,22 +32,31 @@ export class LocationComponent implements OnInit {
   constructor(private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
+    this.paramsSubscription = this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
       this.locationId = id;
-      this.picPath+=`${this.locationId}`;
       if(id == 'judea-and-samaria')
+      {
         this.centers = this.judeaAndSamariaCenters;
+        this.picPath="/pictures/center-info/judea-and-samaria"
+      }
       else//gaza-strip
+      {
         this.centers = this.gazaStripCenters;
-      $("#location").load(`assets/location/${this.locationId}.html`);
-    });
+        this.picPath="/pictures/center-info/gaza-strip"
+      }
+  });
+  }
+
+  get isJudeaAndSamariaSelcted(){
+    if(this.locationId=='judea-and-samaria')
+      return  true;
+    return false;
   }
 
   onSelect(center){
      this.router.navigate(['/center-info',center.id]);
   }
-
 }
 
 
