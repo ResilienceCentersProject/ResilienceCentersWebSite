@@ -40,7 +40,7 @@
 
   <nav>
     <div class="page-navbar">
-      <a id="home-page" class="navTag" routerLink="/home-page">דף הבית</a>
+      <a id="home-page" class="navTag" routerLink="/home-page" routerLinkActive="active">דף הבית</a>
       <div class="dropdown">
         <a id="dropdown-Resilience-Centers" class="dropbtn navTag">מרכז חוסן לפי אזור גיאוגרפי</a>
         <div class="dropdown-content" id="drop-click">
@@ -58,11 +58,10 @@
             </div>
         </div>
       </div>
+     
+      <a id="authorized-zone" class="navTag" routerLink="/authorized-zone" routerLinkActive="active">התחברות למורשים</a>
 
-      <!-- <a id="authorized-zone" class="navTag" (click)="checkAuth()">התחברות למורשים</a> -->
-      <a id="authorized-zone" class="navTag" (click)="checkAuth()">{{auth_title}}</a>
-
-      <a id="contact-us" class="navTag" routerLink="/contact-us">צור קשר</a>
+      <a id="contact-us" class="navTag" routerLink="/contact-us" routerLinkActive="active">צור קשר</a>
     </div>
   </nav>
 

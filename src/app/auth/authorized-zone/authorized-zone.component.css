@@ -23,3 +23,11 @@
 	background: #43A047;
   }
   /*log-out button*/
+  #logout{
+	position: fixed;
+  	bottom: 4%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	clear: both;
+  }

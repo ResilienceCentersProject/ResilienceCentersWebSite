@@ -6,7 +6,7 @@
 
 <div (click)="onSelect(folder)" *ngFor="let folder of getFolders()| filter:searchWord"> <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
     <div class='thread-reply-folder' [id]="folder.id">
-        <img src='https://cdn2.iconfinder.com/data/icons/thesquid-ink-40-free-flat-icon-pack/64/envelope-2-512.png' width="60px" height="50px">
+        <img src='https://cdn0.iconfinder.com/data/icons/Hand_Drawn_Web_Icon_Set/128/folder_download.png'>
         <span class="folder">{{folder.name}}</span>
     </div>
 </div>
