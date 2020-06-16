@@ -21,7 +21,7 @@ export class AppComponent {
     {"id":"fromTheNews","hebName":"מהעיתונות"},
     {"id":"inEmergency","hebName":"בחירום"},
     {"id":"infoForEducationSystems","hebName":"מידע למסגרות חינוך"},
-    {"id":"infoForParentsInEmergency","hebName":"מידע להורים בשעות חירום"},
+    {"id":"infoForParentsInEmergencies","hebName":"מידע להורים בשעות חירום"},
     {"id":"inRoutine","hebName":"בשגרה"},
     {"id":"volunteers","hebName":"מתנדבים"},
   ];
@@ -33,11 +33,15 @@ export class AppComponent {
     if(center.id == "judea-and-samaria" || center.id == "gaza-strip"){
       this.router.navigate(['/location',center.id]);
     } else {
-      this.router.navigate(['/center-info',center.id]);
+      // this.router.navigate(['/center-info',center.id]);
+      this.router.navigate([`/${center.id}`]);
+
     }
   }
   onSelectSubject(subject){
-    this.router.navigate(['/public-info',subject.id]);
+    // this.router.navigate(['/public-info',subject.id]);
+    this.router.navigate([`/${subject.id}`]);
+
 
   }
 

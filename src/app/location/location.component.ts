@@ -55,7 +55,8 @@ export class LocationComponent implements OnInit {
   }
 
   onSelect(center){
-     this.router.navigate(['/center-info',center.id]);
+    //  this.router.navigate(['/center-info',center.id]);
+    this.router.navigate([`/${center.id}`]);
   }
 }
 

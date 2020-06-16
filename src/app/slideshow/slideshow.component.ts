@@ -17,7 +17,7 @@ export interface Pic {
 })
 
 export class SlideshowComponent {
-  name = 'Angular';
+  private dbData;//will hold object from firebase
 
   @Input() dbPath: string;
 
@@ -40,7 +40,7 @@ export class SlideshowComponent {
   }
 
   ngOnInit(): void {
-    this.db.list(this.dbPath).valueChanges()
+    this.dbData=this.db.list(this.dbPath).valueChanges()
       .subscribe(data => {
         //inject data pic content in to picArray:
         for (let i = 0; i < data.length; i++) {
@@ -55,4 +55,10 @@ export class SlideshowComponent {
   getPics() {
     return this.picArray;
   }
+
+   //destroy firebaseData 
+   ngOnDestroy(){
+    this.dbData.unsubscribe();
+  }
+
 }
