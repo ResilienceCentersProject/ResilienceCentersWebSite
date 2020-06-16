@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomePageComponent } from './home-page/home-page.component';
-// import { PublicInfoComponent } from './public-info/public-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-// import { CenterInfoComponent } from './center-info/center-info.component';
 import { AuthorizedZoneComponent } from './auth/authorized-zone/authorized-zone.component';
 import { LocationComponent } from './location/location.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -28,7 +26,6 @@ import { ShaarHanegevComponent } from './center-info/shaar-hanegev/shaar-hanegev
 import { FromTheNewsComponent } from './public-info/from-the-news/from-the-news.component';
 import { InEmergencyComponent } from './public-info/in-emergency/in-emergency.component';
 import { InfoForEducationSystemsComponent } from './public-info/info-for-education-systems/info-for-education-systems.component';
-
 import { InfoForParentsInEmergenciesComponent } from './public-info/info-for-parents-in-emergencies/info-for-parents-in-emergencies.component';
 import { InRoutineComponent } from './public-info/in-routine/in-routine.component';
 import { VolunteersComponent } from './public-info/volunteers/volunteers.component';
@@ -77,10 +74,8 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents = [  ContactUsComponent,
                                     HomePageComponent,
-                                    // PublicInfoComponent,
                                     PageNotFoundComponent,
                                     LocationComponent,
-                                    // CenterInfoComponent,
                                     LoginComponent,
                                     AuthorizedZoneComponent,
                                     FilesComponent,

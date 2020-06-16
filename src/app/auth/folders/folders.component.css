@@ -47,6 +47,9 @@
 	width: 50px;
   }
   
-  /*For folders*/
+.folders{
+	display:flex;
+	direction: ltr;
+}
 
 

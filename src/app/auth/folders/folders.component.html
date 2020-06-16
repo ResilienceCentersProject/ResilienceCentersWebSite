@@ -1,13 +1,16 @@
+
 <!-- For the search engine -->
 <div class="search-container">
     <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off" placeholder="חיפוש" >
 </div>
 <!-- For the search engine -->
 
-<div (click)="onSelect(folder)" *ngFor="let folder of getFolders()| filter:searchWord"> <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
-    <div class='thread-reply-folder' [id]="folder.id">
-        <img src='https://cdn0.iconfinder.com/data/icons/Hand_Drawn_Web_Icon_Set/128/folder_download.png'>
-        <span class="folder">{{folder.name}}</span>
+<div class="folders">
+    <div (click)="onSelect(folder)" *ngFor="let folder of getFolders()| filter:searchWord"> <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
+        <div class='thread-reply-folder' [id]="folder.id">
+            <img src='https://cdn0.iconfinder.com/data/icons/Hand_Drawn_Web_Icon_Set/128/folder_download.png'>
+            <span class="folder">{{folder.name}}</span>
+        </div>
     </div>
 </div>
 
