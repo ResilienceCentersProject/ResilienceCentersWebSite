@@ -1,0 +1,61 @@
+  #logo {
+    height: 200px;
+    width: 200px;
+  }
+  
+  .who-we-are {
+    width: 90%;
+    margin: auto;
+    margin-right: 5%;
+    font-size: 120%;
+  }
+  
+  .title-info {
+    font-size: 300%;
+    text-decoration: underline;
+  }
+  
+  .video-info {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .video-center {
+    max-width: 90%;
+    height: 300px;
+    padding: 20px;
+  }
+  
+  .phone-numbers {
+    width: 35%;
+    padding: 10px;
+    margin-right: 10%;
+    margin-bottom: 2%;
+  }
+  
+  table {
+    margin: auto;
+    width: 100%;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    margin-left: 50%;
+  }
+  th{
+    text-decoration: underline;
+    font-size: 140%;
+  }
+  
+  th, td {
+    width: 50%;
+    padding: 10px;
+    font-weight: bold;
+  }
+  div{
+    font-family: 'Varela Round', sans-serif;
+  }
+  

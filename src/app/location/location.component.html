@@ -1,22 +1,19 @@
-<!--h3> Welcome to {{locationId}}!!</h3-->
-
 <div id="center-button">
   <div (click)="onSelect(center)" class="navTag" *ngFor="let center of centers">
     <a [id]="center.id">{{center.hebName}}</a>
   </div>
 </div>
 
+<div *ngIf="isJudeaAndSamariaSelcted; then thenBlock else elseBlock"></div>
 
-<div id="location"></div>
+<!-- if judea-and-samaria selected -->
+<ng-template #thenBlock>
+  <p>ברוכים הבאים ליהודה ושומרון </p>
+  <app-slideshow [dbPath]="picPath"> </app-slideshow>  
+</ng-template>
 
-
-<!--div class="navTag" *ngFor="let center of centers">
-    <a [id]="center.id">{{center.hebName}}</a>
-</div>
-
-<app-center-info></app-center-info-->
-
-<p> . בנוסף ללחצנים שיאפשרו לצפות במידע הרלוונטי למרכז הנבחר, יהיה בדף זה מידע ותמונות שרלוונטיים לכל המרכזים.  
-</p>
-
-<!-- <app-slideshow [dbPath]="picPath"> </app-slideshow>   -->
+<!-- if gaza-strip selected -->
+<ng-template #elseBlock>
+  <p>ברוכים הבאים לעוטף עזה </p>
+  <app-slideshow [dbPath]="picPath"> </app-slideshow>  
+</ng-template>

@@ -1,4 +1,13 @@
 <div id="infoContact">
+
+<div *ngIf="emailSent; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <h1 id="success">תודה על פנייתך. הודעתך התקבלה, נחזור אליך בהקדם</h1>
+</ng-template>
+
+<ng-template #elseBlock>
+   
     <div id="contact-title">
         <h1>צור קשר</h1>
     </div>
@@ -9,21 +18,22 @@
         <input type="tel" class="contact-form-info" id="phone" placeholder="פלאפון*" required>
         <input type="text" class="contact-form-info" id="contactIssue" placeholder="בחר נושא פנייה*" required>
         <input type="text" class="contact-form-info" id="livingPlace" placeholder="בחר איזור מגורים">
-        <select type="text" class="contact-form-info" id="contactCenter" required>
+        <select type="text" class="contact-form-info" id="contactCenter"  required>
             <option value="" disabled selected hidden >בחר מרכז לפנייה*</option>
-            <option value="ashkelon">אשקלון</option>
-            <option value="ashkelonBeach">חוף אשקלון</option>
-            <option value="bedouinSociety">החברה הבדואית</option>
-            <option value="benjamin">בנימין</option>
-            <option value="eshkol">אשכול</option>
-            <option value="etzion">עציון</option>
-            <option value="judea">יהודה</option>
-            <option value="negevFields">שדות נגב</option>
-            <option value="sderot">שדרות</option>
-            <option value="shaarHanegev">שער הנגב</option>
-            <option value="shomron">שומרון</option>
+            <option [value]="centers[0].hebName">{{centers[0].hebName}}</option>
+            <option [value]="centers[1].hebName">{{centers[1].hebName}}</option>
+            <option [value]="centers[2].hebName">{{centers[2].hebName}}</option>
+            <option [value]="centers[3].hebName">{{centers[3].hebName}}</option>
+            <option [value]="centers[4].hebName">{{centers[4].hebName}}</option>
+            <option [value]="centers[5].hebName">{{centers[5].hebName}}</option>
+            <option [value]="centers[6].hebName">{{centers[6].hebName}}</option>
+            <option [value]="centers[7].hebName">{{centers[7].hebName}}</option>
+            <option [value]="centers[8].hebName">{{centers[8].hebName}}</option>
+            <option [value]="centers[9].hebName">{{centers[9].hebName}}</option>
+            <option [value]="centers[10].hebName">{{centers[10].hebName}}</option>
         </select>
         <textarea id="message" class="contact-form-info" placeholder="הודעה*" required></textarea>
         <input type="submit" class="contact-form-send" value="שלח" (click)="submitData()">
     </form>
+</ng-template>
 </div>

@@ -1,14 +1,21 @@
-<div style="text-align:center" *ngIf="this.picArray[0]">
-    <!-- <img id="pic" [src]="getPics()"/> -->
-    <!-- <ng-image-slider  [images]= "getPics()" [infinite]="true" [autoSlide]="5" [imageSize]="{width: '25%', height: 200}" [slideImage]="1" [imagePopup]="true" #nav></ng-image-slider> -->
-    <ng-image-slider #nav
+<!-- <div style="text-align:center" *ngIf="this.picArray[0]"> -->
+<div style="text-align:center;" *ngIf="this.picArray[0]">
+
+    <ng-image-slider #nav 
     [images]="getPics()"
-    [infinite]="true"
+    [infinite]="false"
     [autoSlide]="1"
-    [imageSize]="{width: '25%', height: 200}"
-    slideImage="1"></ng-image-slider>
+    [imageSize]="{width: '50%', height: '50%'}"
+    [animationSpeed]="4"
+    slideImage="1"
+    [imagePopup]="false">
+    </ng-image-slider>
 
 </div>
+
+<!-- if we wont be able to make the pics bigger we will add: -->
+    <!-- [imagePopup]="false" --> 
+
 <!-- <ng-container *ngIf="this.picArray[0]">
     <img src="{{this.picArray[0].image }}" />
 </ng-container> -->

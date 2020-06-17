@@ -21,47 +21,30 @@ export class AppComponent {
     {"id":"fromTheNews","hebName":"מהעיתונות"},
     {"id":"inEmergency","hebName":"בחירום"},
     {"id":"infoForEducationSystems","hebName":"מידע למסגרות חינוך"},
-    {"id":"infoForParentsInEmergency","hebName":"מידע להורים בשעות חירום"},
+    {"id":"infoForParentsInEmergencies","hebName":"מידע להורים בשעות חירום"},
     {"id":"inRoutine","hebName":"בשגרה"},
     {"id":"volunteers","hebName":"מתנדבים"},
   ];
 
-  public auth_title="התחברות למורשים";
   
-  //constructor(private router: Router, private route:ActivatedRoute, private authGuardService: AuthGuardService) { }
   constructor(private router: Router, private route:ActivatedRoute, private authService: AuthService) { }
 
   onSelect(center){
     if(center.id == "judea-and-samaria" || center.id == "gaza-strip"){
       this.router.navigate(['/location',center.id]);
     } else {
-      this.router.navigate(['/center-info',center.id]);
+      // this.router.navigate(['/center-info',center.id]);
+      this.router.navigate([`/${center.id}`]);
+
     }
   }
   onSelectSubject(subject){
-    this.router.navigate(['/public-info',subject.id]);
+    // this.router.navigate(['/public-info',subject.id]);
+    this.router.navigate([`/${subject.id}`]);
+
 
   }
 
-  checkAuth(){
-    if(this.authService.isLoggedIn){
-      this.router.navigate(['/authorized-zone']);
-    }
-    else{
-      this.router.navigate(['/login']);
-    }
-  }
 
-  // changeAuthTitle(){
-  //   if(this.authService.isLoggedIn){
-  //     this.auth_title = "ספריית ידע/התנקות"
-  //   }
-  //   else{
-  //     this.auth_title="התחברות למורשים";
-  //   }
-
-  // }
-  
- // public url = item.product_image_urls.filter(arr=>arr.match("homepage")!==null)
 
 }

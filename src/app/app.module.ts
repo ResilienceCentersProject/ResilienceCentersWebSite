@@ -23,7 +23,24 @@ import { AuthService } from "./auth/services/auth.service";
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 /*-----STORAGE-REALTIME-DATABSE-----*/
 
-import { Ng2SearchPipeModule } from 'ng2-search-filter';//For the search in Auth zone
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ShomronComponent } from './center-info/shomron/shomron.component';
+import { AshkelonComponent } from './center-info/ashkelon/ashkelon.component';
+import { FromTheNewsComponent } from './public-info/from-the-news/from-the-news.component';
+import { AshkelonBeachComponent } from './center-info/ashkelon-beach/ashkelon-beach.component';
+import { BenjaminComponent } from './center-info/benjamin/benjamin.component';
+import { BedouinSocietyComponent } from './center-info/bedouin-society/bedouin-society.component';
+import { EshkolComponent } from './center-info/eshkol/eshkol.component';
+import { EtzionComponent } from './center-info/etzion/etzion.component';
+import { JudeaComponent } from './center-info/judea/judea.component';
+import { NegevFieldsComponent } from './center-info/negev-fields/negev-fields.component';
+import { SderotComponent } from './center-info/sderot/sderot.component';
+import { ShaarHanegevComponent } from './center-info/shaar-hanegev/shaar-hanegev.component';
+import { InEmergencyComponent } from './public-info/in-emergency/in-emergency.component';
+import { InfoForEducationSystemsComponent } from './public-info/info-for-education-systems/info-for-education-systems.component';
+import { InfoForParentsInEmergenciesComponent } from './public-info/info-for-parents-in-emergencies/info-for-parents-in-emergencies.component';
+import { InRoutineComponent } from './public-info/in-routine/in-routine.component';
+import { VolunteersComponent } from './public-info/volunteers/volunteers.component';//For the search in Auth zone
 
 @NgModule({
   declarations: [
@@ -34,7 +51,24 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';//For the search in Auth
     LocationComponent,
     SlideshowComponent,
     LoginComponent,
-    AuthorizedZoneComponent
+    AuthorizedZoneComponent,
+    ShomronComponent,
+    AshkelonComponent,
+    FromTheNewsComponent,
+    AshkelonBeachComponent,
+    BenjaminComponent,
+    BedouinSocietyComponent,
+    EshkolComponent,
+    EtzionComponent,
+    JudeaComponent,
+    NegevFieldsComponent,
+    SderotComponent,
+    ShaarHanegevComponent,
+    InEmergencyComponent,
+    InfoForEducationSystemsComponent,
+    InfoForParentsInEmergenciesComponent,
+    InRoutineComponent,
+    VolunteersComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,21 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/fire
 export class ContactUsComponent implements OnInit {
 
   private submissionForm: AngularFirestoreCollection<any>;
+  public emailSent=false;
+
+  public centers=[
+    {"id":"ashkelon","hebName":"אשקלון"},
+    {"id":"ashkelon-beach","hebName":"חוף אשקלון"},
+    {"id":"sderot","hebName":"שדרות"},
+    {"id":"shaar-hanegev","hebName":"שער הנגב"},
+    {"id":"negev-fields","hebName":"שדות נגב"},
+    {"id":"eshkol","hebName":"אשכול"},
+    {"id":"bedouin-society","hebName":"החברה הבדואית"},
+    {"id":"benjamin","hebName":"בנימין"},
+    {"id":"shomron","hebName":"שומרון"},
+    {"id":"etzion","hebName":"עציון"},
+    {"id":"judea","hebName":"יהודה"}
+  ];
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -36,14 +51,14 @@ export class ContactUsComponent implements OnInit {
           (<HTMLInputElement>document.getElementById("contactCenter")).value = "";
           (<HTMLInputElement>document.getElementById("livingPlace")).value = "";
           (<HTMLInputElement>document.getElementById("message")).value = "";
-          alert("בקשתך התקבלה ותענה בהקדם.");
+          this.emailSent=true;
         });
     }
     else {
       if (validateEmail(data.email) == false)
-        alert("אימייל לא מתאים.");
+        alert("האימייל שהוזן אינו תקין");
       else
-        alert("חסרים שדות שלא מולאו.");
+        alert("ישנם שדות חובה שלא מולאו");
     }
   }
 }

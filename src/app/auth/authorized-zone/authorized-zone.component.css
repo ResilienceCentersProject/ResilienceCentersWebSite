@@ -22,4 +22,15 @@
   button:hover, button:active,.button:focus {
 	background: #43A047;
   }
-  /*log-out button*/
+
+  #logout{
+	display: table;
+	margin:auto;
+	margin-bottom:2%;
+	margin-top: 5%;
+	position: relative;	
+
+  }
+
+  
+

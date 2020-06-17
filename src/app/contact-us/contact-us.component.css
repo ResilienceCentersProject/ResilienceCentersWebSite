@@ -109,6 +109,10 @@ h1{
     font-family: 'Varela Round', sans-serif;
 }
 
+#success{
+    margin-top:10%;
+}
+
 input{
     font-family: 'Varela Round', sans-serif;
 }

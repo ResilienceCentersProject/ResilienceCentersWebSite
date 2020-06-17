@@ -78,6 +78,11 @@ header {
   color: whitesmoke;
 }
 
+.active{
+    background-color: rgb(245, 151, 43);
+    color: whitesmoke;
+}
+
 .dropdown {
   width: 19.7%;
   position: relative;
@@ -169,8 +174,6 @@ footer {
   align-items: center;
   line-height: 25px;
   font-family: 'Varela Round', sans-serif;
-
-  /*added for auth*/
   clear: both;
 }
 
