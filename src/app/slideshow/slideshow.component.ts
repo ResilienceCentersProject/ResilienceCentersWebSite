@@ -4,9 +4,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { ActivatedRoute, Router } from '@angular/router';
 
 export interface Pic {
-  //id: string;
   image: string;
-  thumbImage: string;
   title: string;
 }
 
@@ -18,47 +16,24 @@ export interface Pic {
 
 export class SlideshowComponent {
   private dbData;//will hold object from firebase
-
   @Input() dbPath: string;
+  public images: Array<Pic> = [];
+  public titles: Array<Pic> = [];
 
-  //private dbPath ='/pictures/center-info/samaria'; //path to pictures in realtime data base
-  public picArray: Array<Pic> = [];//Array for pics: each folder has id and name
-  
-  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router) { 
-    // this.db.list(this.dbPath).valueChanges()
-    //   .subscribe(data => {
-
-    //     //inject data pic content in to picArray:
-    //     for (let i = 0; i < data.length; i++) {
-    //       // this.picArray.push({ image: data[i]["image"], thumbImage: data[i]["thumbImage"], title: data[i]["title"] });
-    //       this.picArray.push({ thumbImage: data[i]["thumbImage"], title: data[i]["title"]});
-          
-    //     }
-    //   })
-    //   console.log(this.picArray);
-    //   //console.log(this.picArray[0].thumbImage);
+  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router) {
+    
   }
 
-  ngOnInit(): void {
-    this.dbData=this.db.list(this.dbPath).valueChanges()
-      .subscribe(data => {
-        //inject data pic content in to picArray:
-        for (let i = 0; i < data.length; i++) {
-          this.picArray.push({ image: data[i]["image"],thumbImage: data[i]["thumbImage"], title: data[i]["title"]});
-          
-        }
-      })
-      console.log(this.picArray);
-   }
+ ngOnInit():void{
+  this.dbData=this.db.list(this.dbPath).valueChanges()
+  .subscribe(data => {
+    console.log(data);
 
-  //returns array of pics
-  getPics() {
-    return this.picArray;
-  }
-
-   //destroy firebaseData 
-   ngOnDestroy(){
-    this.dbData.unsubscribe();
-  }
-
+    for (let i = 0; i < data.length; i++) {
+      this.images.push(data[i]["image"]);
+      this.titles.push(data[i]["title"]);
+    }
+  })
+ }
 }
+

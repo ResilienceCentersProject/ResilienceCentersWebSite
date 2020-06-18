@@ -148,10 +148,23 @@ header {
   bottom: 10%;
   left: 1%;
   scroll-behavior: smooth;
+  border: 1px solid black;
+  float: left;
+}
+
+#page-facebook,#page-coalition {
+  border: 1px solid black;
+  width: 100%;
+  direction: ltr;
 }
 
 .page-icon:hover {
   opacity: 0.3;
+}
+
+.page-icon{
+  width: 20%;
+  height: 20%;
 }
 
 /*----------------------------------------------------------------------*/

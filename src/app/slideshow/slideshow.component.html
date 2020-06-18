@@ -1,5 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class= "col-md-8">
+      <ngb-carousel id="carousel_1" #carousel="ngbCarousel" class="text-lg-center" #myCarousel="ngbCarousel" showNavigationArrows="true"
+        interval="2500" pauseOnHover="false">
+        <ng-template ngbSlide *ngFor="let image of images;let i = index" id="{{i}}">
+          <div class="picsum-img-wrapper">
+            <img [src]="image" alt="Random first slide"  style=" max-height:300px; margin:0 auto;">
+          </div>
+          <div class="carousel-caption">
+            <h6>{{titles[i]}}</h6>
+          </div>
+          <a class="carousel-control-prev design-color" href="#carousel_1" data-slide="prev">
+            <span class="carousel-control-prev-icon design-color"></span>
+          </a>
+          <a class="carousel-control-next design-color" href="#carousel_1" data-slide="next">
+            <span class="carousel-control-next-icon design-color"></span>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <!-- <div style="text-align:center" *ngIf="this.picArray[0]"> -->
-<div style="text-align:center;" *ngIf="this.picArray[0]">
+<!-- <div style="text-align:center;" *ngIf="this.picArray[0]">
 
     <ng-image-slider #nav 
     [images]="getPics()"
@@ -11,10 +44,10 @@
     [imagePopup]="false">
     </ng-image-slider>
 
-</div>
+</div> -->
 
 <!-- if we wont be able to make the pics bigger we will add: -->
-    <!-- [imagePopup]="false" --> 
+<!-- [imagePopup]="false" -->
 
 <!-- <ng-container *ngIf="this.picArray[0]">
     <img src="{{this.picArray[0].image }}" />

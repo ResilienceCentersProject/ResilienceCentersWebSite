@@ -42,6 +42,10 @@ import { InfoForParentsInEmergenciesComponent } from './public-info/info-for-par
 import { InRoutineComponent } from './public-info/in-routine/in-routine.component';
 import { VolunteersComponent } from './public-info/volunteers/volunteers.component';//For the search in Auth zone
 
+//for cool slide-show;)
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbdCarouselBasic } from './carousel-basic';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +72,8 @@ import { VolunteersComponent } from './public-info/volunteers/volunteers.compone
     InfoForEducationSystemsComponent,
     InfoForParentsInEmergenciesComponent,
     InRoutineComponent,
-    VolunteersComponent
+    VolunteersComponent,
+    //NgbdCarouselBasic
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,9 @@ import { VolunteersComponent } from './public-info/volunteers/volunteers.compone
     FormsModule,
     ReactiveFormsModule,
     NgImageSliderModule,
+    //for cool slide-show;)
+    NgbModule,
+    //NgbdCarouselBasic,
 
    /*-----FIREBASE------*/
    AngularFireModule.initializeApp(environment.firebaseConfig),//note: enviroment.firebase_object_name
@@ -86,5 +94,9 @@ import { VolunteersComponent } from './public-info/volunteers/volunteers.compone
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
+              //,NgbdCarouselBasic],
+ // exports: [NgbdCarouselBasic]
+
 })
 export class AppModule { }
+export class NgbdCarouselBasicModule {}
