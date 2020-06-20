@@ -150,16 +150,16 @@ header {
   scroll-behavior: smooth;
 }
 
-#page-facebook,#page-coalition {
+#img-icon{
+  display: -webkit-box;
+}
+
+#page-facebook, #page-coalition {
   direction: ltr;
 }
 
 .page-icon:hover {
   opacity: 0.3;
-}
-
-#img-icon{
-  display: -webkit-box;
 }
 
 /*----------------------------------------------------------------------*/

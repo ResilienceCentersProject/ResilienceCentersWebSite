@@ -1,3 +1,14 @@
 div{
     font-family: 'Varela Round', sans-serif;
 }
+
+#link-info{
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+}
+
+.text-design{
+  font-size: 130%;
+  font-weight: bold;
+}

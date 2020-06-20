@@ -9,8 +9,8 @@ import { element, by } from 'protractor';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
-  
+
+
   public centers=[
     {"id":"ashkelon","hebName":"אשקלון"},
     {"id":"judea-and-samaria", "hebName":"יהודה ושומרון"},
@@ -18,7 +18,7 @@ export class AppComponent {
     {"id":"bedouin-society","hebName":"החברה הבדואית"},
   ];
   public subjects=[
-    {"id":"fromTheNews","hebName":"מהעיתונות"},
+    //{"id":"fromTheNews","hebName":"מהעיתונות"},
     {"id":"inEmergency","hebName":"בחירום"},
     {"id":"infoForEducationSystems","hebName":"מידע למסגרות חינוך"},
     {"id":"infoForParentsInEmergencies","hebName":"מידע להורים בשעות חירום"},
@@ -26,7 +26,7 @@ export class AppComponent {
     {"id":"volunteers","hebName":"מתנדבים"},
   ];
 
-  
+
   constructor(private router: Router, private route:ActivatedRoute, private authService: AuthService) { }
 
   onSelect(center){

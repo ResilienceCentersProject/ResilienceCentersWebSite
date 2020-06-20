@@ -21,7 +21,7 @@ export class SlideshowComponent {
   public titles: Array<Pic> = [];
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router) {
-    
+
   }
 
  ngOnInit():void{
