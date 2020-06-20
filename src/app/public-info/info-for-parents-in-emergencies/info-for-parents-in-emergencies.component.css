@@ -1,3 +1,21 @@
 div{
     font-family: 'Varela Round', sans-serif;
 }
+
+#title{
+  font-size: 120%;
+}
+
+#info-for-parents{
+  width: 80%;
+  margin: auto;
+}
+
+ul{
+  list-style-type: none;
+}
+
+#inside-text{
+  width: 95%;
+  margin: auto;
+}

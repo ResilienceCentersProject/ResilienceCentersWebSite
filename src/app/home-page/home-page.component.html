@@ -5,6 +5,8 @@
       You can collapse this card by clicking Toggle
 </div> -->
 
+<div id="page-LoginButton" class="designButton designButton-swap">AAAA<span id="change-hidden">BBBB</span></div>
+
 <div (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapse-info">
   <div class="who-we-are">
     <div class="detail-info">
@@ -30,7 +32,7 @@
           החברה הבדואית
         </li>
       </ul>
-
+      <div id="collapse-info" class="info-hidden" [ngbCollapse]="!isCollapsed">וישנם גם....<span id="change-hidden">קרא עוד...</span></div>
       <div id="collapse-info" [ngbCollapse]="isCollapsed">
         <p>
           וישנם גם מרכזי הכשרה בצפון ובירושלים. מרכז הכשרות אזורי מקבץ מספר רשויות קרובות, לתהליך שיפור המוכנות למצבי
