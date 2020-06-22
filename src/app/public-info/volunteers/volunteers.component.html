@@ -1,36 +1,44 @@
 <div id="publicInfo">
+  <div id="design-volunteers">
+    <div id="file-data">
+
+      <div *ngIf="!isSelected; then thenBlock else elseBlock"></div>
+
+      <ng-template #thenBlock>
 
 
-  <div *ngIf="!isSelected; then thenBlock else elseBlock"></div>
 
-  <ng-template #thenBlock>
+        <!-- For the search engine -->
+        <div class="search-container">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off"
+            placeholder="חיפוש">
+        </div>
+        <!-- For the search engine -->
 
-      <img id="logo" src="assets/images/מתנדב.png" />
-  
-      <!-- For the search engine -->
-      <div class="search-container">
-          <input class="form-control" type="text" name="search" [(ngModel)]="searchWord" autocomplete="off" placeholder="חיפוש" >
-      </div>
-      <!-- For the search engine -->
-  
-      <!--For Files-->
-      <div (click)="onSelect(file.url)" *ngFor="let file of files| filter:searchWord"> <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
+        <!--For Files-->
+        <div (click)="onSelect(file.url)" *ngFor="let file of files| filter:searchWord">
+          <!-- "| filter:searchWord" is For the search engine. The filtering will be done by the name or the key or the id in the realtime firebase -->
           <div class='thread-reply-file'>
-              <img [src]='getIcon(file.type)'>
-              <span class="file">{{file.name}}</span>
+            <img [src]='getIcon(file.type)'>
+            <span class="file">{{file.name}}</span>
           </div>
-      </div>
-      <!--For Files-->
-  
-  </ng-template>
-  
-  <ng-template #elseBlock>
-      <button id="close-pdf" (click)="closePdf()">חזור לדף הקודם</button>
-  
-      <div id="div-file">
-        <!-- <embed [src]="fileURL" type="application/pdf" width="100%" height="600px" /> -->
-        <iframe [src]="fileURL" type="application/pdf" allowfullscreen width="100%" height="600px"></iframe>
-      </div>
-  </ng-template>
+        </div>
+        <!--For Files-->
 
+      </ng-template>
+
+      <ng-template #elseBlock>
+        <button id="close-pdf" (click)="closePdf()">חזור לדף הקודם</button>
+
+        <div id="div-file">
+          <!-- <embed [src]="fileURL" type="application/pdf" width="100%" height="600px" /> -->
+          <iframe [src]="fileURL" type="application/pdf" allowfullscreen width="100%" height="600px"></iframe>
+        </div>
+      </ng-template>
+    </div>
+
+    <div id="emotionAid-pic">
+      <img id="logo" src="assets/images/מתנדב.png" />
+    </div>
+  </div>
 </div>
