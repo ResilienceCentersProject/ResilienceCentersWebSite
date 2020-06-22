@@ -81,10 +81,13 @@ export class FilesComponent implements OnInit {
   //https://www.iconfinder.com/search/?q=mp4&from=homepage For icon
   getIcon(type: string) {
     if (type === "mp4") {
-      return "https://cdn3.iconfinder.com/data/icons/hoya/Movies%20Folder.png"
+      return "https://cdn3.iconfinder.com/data/icons/hoya/Movies%20Folder.png";
+    }
+    else if(type === "mp3"){
+      return "https://cdn3.iconfinder.com/data/icons/hoya/Music%20Folder%202.png";
     }
     else {
-      return "https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/27_Pdf_File_Type_Adobe-512.png"
+      return "https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/27_Pdf_File_Type_Adobe-512.png";
     }
   }
 
