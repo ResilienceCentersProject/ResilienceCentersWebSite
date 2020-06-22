@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { DomSanitizer } from '@angular/platform-browser';
 
 export interface File {
-  id: string,
-  title: string;
+  name: string,
   url: URL
+  key: string;
+  type: string;
 }
 
 @Component({
@@ -16,34 +16,40 @@ export interface File {
 })
 export class VolunteersComponent implements OnInit {
 
-  private dbPath = `/volunteers-pdf`;//beginig of path to realtime database
+  private dbPath = `/public-info/volunteers/files`;//beginig of path to realtime database
+
   private fileArray: Array<File> = [];//each file contains name and url
+  private fileSelected = false;//set to true if a html file selected
 
   public fileURL;//protected fileUrl
   private dbData;//will hold object from firebase
 
-  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private sanitizer: DomSanitizer) { }
+  searchWord: string;//the user input in the search filed
 
+  constructor(private db: AngularFireDatabase, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
 
       this.setFileArray();//set file array
-    });
+
   }
 
+  //this function gets data from realtime database and sets the array of files
   setFileArray() {
+
     this.dbData = this.db.list(this.dbPath).valueChanges()
       .subscribe(data => {
 
         //inject fata files in to file array
         for (let i = 0; i < data.length; i++)
-          this.fileArray.push({ id: data[i]["name"], url: data[i]["url"], title: data[i]["key"]});
+          this.fileArray.push({ name: data[i]["name"], url: data[i]["url"], key: data[i]["key"], type: data[i]["type"] });
+        this.fileArray.sort((a, b) => a.name.localeCompare(b.name));
       })
   }
 
   //listener to html file selector
   onSelect(url) {
+    this.fileSelected = true;
     this.fileURL = this.creatSafeURL(url);
   }
 
@@ -54,8 +60,33 @@ export class VolunteersComponent implements OnInit {
 
   //returns array of Files
   get files() {
-    console.log(this.fileArray);
     return this.fileArray;
+  }
+
+  //return true if html file was selected
+  get isSelected() {
+    return this.fileSelected;
+  }
+
+  //https://www.iconfinder.com/search/?q=mp4&from=homepage For icon
+  getIcon(type: string) {
+    if (type === "mp4") {
+      return "https://cdn3.iconfinder.com/data/icons/hoya/Movies%20Folder.png"
+    }
+    else {
+      return "https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/27_Pdf_File_Type_Adobe-512.png"
+    }
+  }
+
+  //listener for close-pfd btn
+  closePdf() {
+    this.fileSelected = false;
+  }
+
+
+  //destroy firebaseData before logging out
+  ngOnDestroy() {
+    this.dbData.unsubscribe();
   }
 
 
