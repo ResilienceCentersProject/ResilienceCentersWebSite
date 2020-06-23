@@ -148,14 +148,12 @@ header {
   bottom: 10%;
   left: 1%;
   scroll-behavior: smooth;
-}
-
-#img-icon{
-  display: -webkit-box;
+  width: 1%;
 }
 
 #page-facebook, #page-coalition {
   direction: ltr;
+  margin-bottom: 5px;
 }
 
 .page-icon:hover {

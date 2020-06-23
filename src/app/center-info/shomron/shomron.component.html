@@ -4,9 +4,6 @@
 
     <img id="logo" src="assets/images/centerAssets/shomron/shomronLogo.png" />
     <div class="who-we-are">
-      <div class="title-info">
-        מי אנחנו:
-      </div>
       <div class="detail-info">
         <p>
           מרכז חוסן שומרון פועל משנת 2017, מתוקף החלטת ממשלה ומתוקצב ע"י משרדי החינוך, הרווחה והבריאות. המרכז עובד בחמש
@@ -50,11 +47,12 @@
       </div>
     </div>
     <app-slideshow [dbPath]="picPath"> </app-slideshow>
+    <br>
 
     <div class="video-info">
-      <video class="video-center" controls>
-        <source src="" type="video/mp4"></video>
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fihyMxUJFVE"></iframe>
     </div>
+
     <br>
     <br>
 
@@ -65,31 +63,36 @@
     </ul>
 
     <div id="workshops">
-      <img id="workshop-1" src="" />
-      <p>כאן תהיה תמונה של הסדנה</p>
-      <a id="workshop-1-link" href="" target="_blank">קישור לסדנה</a>
+      <a id="workshop-link" href="" target="_blank">
+        <img id="workshop-img" src="assets/images/centerAssets/shomron/shomronLogo.png" />
+        <br>
+        <span id="change-hidden">לחץ כדי להגיע לסדנה</span></a>
     </div>
 
     <br>
 
-    <div class="phone-numbers">
-      <table>
+    <div id="phone-numbers-data">
+      <table id="phone-numbers-table">
         <tr>
-          <th>תפקיד:</th>
-          <th>מספר:</th>
+          <td>
+            <b>תפקיד</b>:
+            משרד חוסן שומרון |
+            <b>מספר</b>:
+            09-7940329
+          </td>
         </tr>
         <tr>
-          <td>משרד חוסן שומרון</td>
-          <td>09-7940329</td>
-        </tr>
-        <tr>
-          <td>נייד חוסן</td>
-          <td>055-277-9285</td>
+          <td>
+            <b>תפקיד</b>:
+            נייד חוסן |
+            <b>מספר</b>:
+            055-277-9285
+          </td>
         </tr>
       </table>
     </div>
 
+
+
   </div>
-
 </div>
-
