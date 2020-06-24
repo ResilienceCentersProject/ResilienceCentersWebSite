@@ -20,9 +20,7 @@ export class SlideshowComponent {
   public images: Array<Pic> = [];
   public titles: Array<Pic> = [];
 
-  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router) {
-
-  }
+  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router) { }
 
  ngOnInit():void{
   this.dbData=this.db.list(this.dbPath).valueChanges()
