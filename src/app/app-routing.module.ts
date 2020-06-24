@@ -38,7 +38,7 @@ const routes: Routes = [
   {path:'files/:id',component: FilesComponent, canActivate: [AuthGuard]},//this can be used only by authorized-zone
   {path: 'login', component: LoginComponent},
   {path:'location/:id',component: LocationComponent},
-  // {path:'center-info/:id',component: CenterInfoComponent},
+
   //For centers
   {path:'shomron',component: ShomronComponent},
   {path:'ashkelon',component: AshkelonComponent},
@@ -52,7 +52,6 @@ const routes: Routes = [
   {path:'sderot',component: SderotComponent},
   {path:'shaar-hanegev',component: ShaarHanegevComponent},
 
-  // {path:'public-info/:id',component: PublicInfoComponent},
   //For public-info
   {path:'fromTheNews',component: FromTheNewsComponent},
   {path:'inEmergency',component: InEmergencyComponent},
@@ -60,7 +59,6 @@ const routes: Routes = [
   {path:'infoForParentsInEmergencies',component: InfoForParentsInEmergenciesComponent},
   {path:'inRoutine',component: InRoutineComponent},
   {path:'volunteers',component: VolunteersComponent},
-
 
   {path:'contact-us', component: ContactUsComponent},
   {path:'home-page', component: HomePageComponent},
@@ -79,6 +77,7 @@ export const routingComponents = [  ContactUsComponent,
                                     LoginComponent,
                                     AuthorizedZoneComponent,
                                     FilesComponent,
+
                                     //For centers
                                     ShomronComponent,
                                     AshkelonComponent,
@@ -91,6 +90,7 @@ export const routingComponents = [  ContactUsComponent,
                                     NegevFieldsComponent,
                                     SderotComponent,
                                     ShaarHanegevComponent,
+                                    
                                     //For public-info
                                     FromTheNewsComponent,
                                     InEmergencyComponent,

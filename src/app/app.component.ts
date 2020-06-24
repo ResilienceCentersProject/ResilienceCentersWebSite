@@ -29,20 +29,19 @@ export class AppComponent {
 
   constructor(private router: Router, private route:ActivatedRoute, private authService: AuthService) { }
 
+  //btn listener for dropdown-Resilience-Centers
   onSelect(center){
     if(center.id == "judea-and-samaria" || center.id == "gaza-strip"){
       this.router.navigate(['/location',center.id]);
     } else {
-      // this.router.navigate(['/center-info',center.id]);
       this.router.navigate([`/${center.id}`]);
 
     }
   }
+
+   //btn listener for dgeneral-public
   onSelectSubject(subject){
-    // this.router.navigate(['/public-info',subject.id]);
     this.router.navigate([`/${subject.id}`]);
-
-
   }
 
 

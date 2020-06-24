@@ -12,10 +12,6 @@ export interface User {
 })
 
 export class AuthService {
-
-  //NEED TO SET A LIMIT TO THE NUMBER OF ERRORS AND A TIME OUT
-  //NEED TO SET WHAT HAPPENS IN CASE OF ERROR
-  //NEED TO CHECK IF isAuth IS PLACED CORCTLY
   
   user: Observable<firebase.User>;
   private isAuth=false;//set to true id user is authenticated

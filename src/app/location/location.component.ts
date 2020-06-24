@@ -10,7 +10,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class LocationComponent implements OnInit {
   paramsSubscription : Subscription;
-  public locationId = "";
+  public locationId = "";//will hold location Id user chose
   public centers;//these will change according to the tag that wants to use folder componant
   public picPath;//Will hold the path to the wanted image folder in Data Base
  
@@ -32,10 +32,16 @@ export class LocationComponent implements OnInit {
   constructor(private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    //get id From route
     this.paramsSubscription = this.route.paramMap.subscribe((params: ParamMap) => {
-      let id = params.get('id');
-      this.locationId = id;
-      if(id == 'judea-and-samaria')
+      this.locationId = params.get('id');//set id
+      this.setContent();//set html content
+     });
+  }
+
+  //This function sets html content
+  setContent(){
+     if(this.locationId == 'judea-and-samaria')
       {
         this.centers = this.judeaAndSamariaCenters;
         this.picPath="/pictures/center-info/judea-and-samaria"
@@ -45,17 +51,17 @@ export class LocationComponent implements OnInit {
         this.centers = this.gazaStripCenters;
         this.picPath="/pictures/center-info/gaza-strip"
       }
-  });
   }
 
+  //boolean for *ngIf in html
   get isJudeaAndSamariaSelcted(){
     if(this.locationId=='judea-and-samaria')
       return  true;
     return false;
   }
 
+  //btn listener for center-button
   onSelect(center){
-    //  this.router.navigate(['/center-info',center.id]);
     this.router.navigate([`/${center.id}`]);
   }
 }

@@ -84,7 +84,7 @@ export class VolunteersComponent implements OnInit {
   }
 
 
-  //destroy firebaseData before logging out
+  //destroy firebaseData before exit
   ngOnDestroy() {
     this.dbData.unsubscribe();
   }

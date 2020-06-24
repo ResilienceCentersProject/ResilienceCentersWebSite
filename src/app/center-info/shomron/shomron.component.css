@@ -23,6 +23,7 @@
   padding: 20px;
 }
 
+
 .phone-numbers {
   width: 35%;
   padding: 10px;
@@ -54,18 +55,22 @@ div {
   opacity: 0.5;
 }
 
-/* #workshops-area{
- 
-  align-content: center;
-  margin: auto;
-} */
+#workshops-area{
+ width:90%;
+ margin: auto;
+}
 
 #workshops{
   width: max-content;
-  
-  align-content: center;
-  margin: auto;
 }
+
+#links{
+  width: 80%;
+  margin: auto;
+  padding: inherit;
+  font-size: 120%;
+}
+
 
 
 #phone-numbers-table{

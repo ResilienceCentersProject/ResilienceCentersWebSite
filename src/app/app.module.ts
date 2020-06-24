@@ -41,10 +41,8 @@ import { InfoForEducationSystemsComponent } from './public-info/info-for-educati
 import { InfoForParentsInEmergenciesComponent } from './public-info/info-for-parents-in-emergencies/info-for-parents-in-emergencies.component';
 import { InRoutineComponent } from './public-info/in-routine/in-routine.component';
 import { VolunteersComponent } from './public-info/volunteers/volunteers.component';//For the search in Auth zone
-
-//for cool slide-show;)
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-//import { NgbdCarouselBasic } from './carousel-basic';
+
 
 @NgModule({
   declarations: [
@@ -73,7 +71,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     InfoForParentsInEmergenciesComponent,
     InRoutineComponent,
     VolunteersComponent,
-    //NgbdCarouselBasic
   ],
   imports: [
     BrowserModule,
@@ -81,9 +78,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     NgImageSliderModule,
-    //for cool slide-show;)
     NgbModule,
-    //NgbdCarouselBasic,
 
    /*-----FIREBASE------*/
    AngularFireModule.initializeApp(environment.firebaseConfig),//note: enviroment.firebase_object_name
@@ -94,8 +89,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
-              //,NgbdCarouselBasic],
- // exports: [NgbdCarouselBasic]
+        
 
 })
 export class AppModule { }

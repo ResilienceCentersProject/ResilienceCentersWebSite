@@ -47,38 +47,45 @@
       </div>
     </div>
 
-    <div id="workshops-area" *ngFor="let image of images;let i = index" id="{{i}}">
-      <div id="workshops">
-        <a id="workshop-link" href={{urls[i]}} target="_blank">
-          <img id="workshop-img" [src]="image"  />
-          <br>
-          <span id="change-hidden">לחץ כדי להגיע לסדנה</span>
-        </a>
+    <div id="workshops-area">
+      <div *ngFor="let image of images;let i = index" id="{{i}}">
+        <div id="workshops">
+          <a id="workshop-link" href={{urls[i]}} target="_blank">
+            <img id="workshop-img" [src]="image"  />
+            <br>
+            <span id="change-hidden">לחץ כדי להגיע לסדנה</span>
+          </a>
+        </div>
+        <br>
+        <br>
       </div>
-      <br>
     </div>
+
+    <ul id="links">
+      <li><a href="https://forms.gle/8Qp68FRdXuRhoJHx5" target="_blank">טופס פנייה לטיפול</a></li>
+      <li><a href="https://forms.gle/VR54NzGo1RT818dH7" target="_blank">משוב על טיפול שניתן במסגרת חוסן</a></li>
+    </ul>
+
+    <br>
+    <br>
+
 
     <app-slideshow [dbPath]="picPath"> </app-slideshow>
     <br>
+    <br>
+    <br>
 
     <div class="video-info">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fihyMxUJFVE"></iframe>
+      <iframe class="embed-responsive-item" width="500" height="315" src="https://www.youtube.com/embed/XhVv639Ry-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <br>
     <br>
-
-    <ul id="links">
-      <li><a href="http://israeltraumacoalition.org/he/" target="_blank">קישור-1</a></li>
-      <li><a href="http://israeltraumacoalition.org/he/" target="_blank">קישור-2</a></li>
-      <li><a href="http://israeltraumacoalition.org/he/" target="_blank">קישור-3</a></li>
-    </ul>
 
     <div id="phone-numbers-data">
       <table id="phone-numbers-table">
         <tr>
           <td>
-            <b>תפקיד</b>:
             משרד חוסן שומרון |
             <b>מספר</b>:
             09-7940329
@@ -86,7 +93,6 @@
         </tr>
         <tr>
           <td>
-            <b>תפקיד</b>:
             נייד חוסן |
             <b>מספר</b>:
             055-277-9285
