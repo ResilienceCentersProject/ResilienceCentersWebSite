@@ -35,8 +35,8 @@ div {
 }
 
 #workshop-img{
-  height: 300px;
-  width: 300px;
+  height: 50%;
+  width: 50%;
 }
 
 #change-hidden {
@@ -54,9 +54,19 @@ div {
   opacity: 0.5;
 }
 
+/* #workshops-area{
+ 
+  align-content: center;
+  margin: auto;
+} */
+
 #workshops{
   width: max-content;
+  
+  align-content: center;
+  margin: auto;
 }
+
 
 #phone-numbers-table{
   width: 90%;

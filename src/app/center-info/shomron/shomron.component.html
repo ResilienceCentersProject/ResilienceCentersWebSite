@@ -46,6 +46,18 @@
         <br />
       </div>
     </div>
+
+    <div id="workshops-area" *ngFor="let image of images;let i = index" id="{{i}}">
+      <div id="workshops">
+        <a id="workshop-link" href={{urls[i]}} target="_blank">
+          <img id="workshop-img" [src]="image"  />
+          <br>
+          <span id="change-hidden">לחץ כדי להגיע לסדנה</span>
+        </a>
+      </div>
+      <br>
+    </div>
+
     <app-slideshow [dbPath]="picPath"> </app-slideshow>
     <br>
 
@@ -61,19 +73,6 @@
       <li><a href="http://israeltraumacoalition.org/he/" target="_blank">קישור-2</a></li>
       <li><a href="http://israeltraumacoalition.org/he/" target="_blank">קישור-3</a></li>
     </ul>
-
-    <div id="workshops"  *ngFor="let image of images;let i = index" id="{{i}}">
-      <p> : לחצו על התמונה להרשמה {{i+1}} סדנה</p>
-      <a id="workshop-link" href={{urls[i]}} target="_blank">
-        <img id="workshop-img" [src]="image" />
-      </a>
-      <!-- <a id="workshop-link" href="" target="_blank">
-        <img id="workshop-img" src="assets/images/centerAssets/shomron/shomronLogo.png" />
-        <br>
-        <span id="change-hidden">לחץ כדי להגיע לסדנה</span></a> -->
-    </div>
-
-    <br>
 
     <div id="phone-numbers-data">
       <table id="phone-numbers-table">
