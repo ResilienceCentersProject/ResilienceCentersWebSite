@@ -19,7 +19,7 @@
   color: whitesmoke;
 }
 
-#center-button{
+#center-button {
   display: flex;
   width: 95%;
   justify-content: space-between;
@@ -27,10 +27,64 @@
   margin: auto;
 }
 
-p{
+p {
   font-family: 'Varela Round', sans-serif;
 }
 
-div{
+div {
   font-family: 'Varela Round', sans-serif;
+}
+
+#samaria-info {
+  width: 70%;
+  margin: auto;
+  font-size: 120%;
+}
+
+#samaria-logo {
+  margin: auto;
+  text-align: center;
+}
+
+#samaria-logo-img {
+  width: 70%;
+}
+
+#samaria-table{
+  width: 80%;
+  margin: auto;
+  font-size: 120%;
+}
+
+#samaria-line {
+  padding: 10px;
+}
+
+#footer-name{
+  color: #0b8e36;
+}
+
+#samaria-footer{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+#contact-info{
+  text-align: center;
+}
+
+#change-hidden {
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 5px;
+  color: whitesmoke;
+  width: max-content;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+#contact-info:hover #change-hidden {
+  opacity: 0.5;
 }
