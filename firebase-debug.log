@@ -1,0 +1,26 @@
+[debug] [2020-07-02T14:38:40.054Z] ----------------------------------------------------------------------
+[debug] [2020-07-02T14:38:40.056Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mayan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-07-02T14:38:40.056Z] CLI Version:   8.4.3
+[debug] [2020-07-02T14:38:40.056Z] Platform:      win32
+[debug] [2020-07-02T14:38:40.056Z] Node Version:  v12.16.1
+[debug] [2020-07-02T14:38:40.058Z] Time:          Thu Jul 02 2020 17:38:40 GMT+0300 (GMT+03:00)
+[debug] [2020-07-02T14:38:40.058Z] ----------------------------------------------------------------------
+[debug] [2020-07-02T14:38:40.059Z] 
+[debug] [2020-07-02T14:38:40.068Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-07-02T14:38:40.069Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Mayan\VisualStudioCode Work Space\Angular Projacets\ITCResilience\ResilienceCentersWebSite
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing in an existing Firebase project directory
+
